@@ -1,1 +1,444 @@
-Teste Wildes
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Currículo - Wildes Hanada</title>
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --fg: #0f172a;
+      --muted: #475569;
+      --primary: #2563eb;
+      --card-bg: #ffffff;
+      --border: #cbd5e1;
+      --timeline-line: #e2e8f0;
+      --timeline-dot: #2563eb;
+      --timeline-dot-active: #1d4ed8;
+      --shadow: rgba(0, 0, 0, 0.1);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f172a;
+        --fg: #f1f5f9;
+        --muted: #94a3b8;
+        --primary: #38bdf8;
+        --card-bg: #1e293b;
+        --border: #334155;
+        --timeline-line: #475569;
+        --timeline-dot: #38bdf8;
+        --timeline-dot-active: #0ea5e9;
+        --shadow: rgba(0, 0, 0, 0.3);
+      }
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--bg);
+      color: var(--fg);
+      line-height: 1.6;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: var(--card-bg);
+      color: var(--fg);
+      border-bottom: 1px solid var(--border);
+      z-index: 1000;
+      padding: 1.5rem 1rem;
+      text-align: center;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 10px var(--shadow);
+    }
+
+    header.shrink {
+      padding: 0.5rem 1rem;A
+    }
+
+    header .full-info {
+      transition: opacity 0.3s ease;
+    }
+
+    header.shrink .full-info {
+      opacity: 0;
+      pointer-events: none;
+      height: 0;
+      overflow: hidden;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.75rem;
+      transition: font-size 0.3s ease;
+      background: linear-gradient(135deg, var(--primary), #7c3aed);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    header.shrink h1 {
+      font-size: 1.25rem;
+    }
+
+    .social a {
+      margin: 0 0.5rem;
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      padding: 0.25rem 0.5rem;
+      border-radius: 0.25rem;
+    }
+
+    .social a:hover {
+      background-color: var(--primary);
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    main {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 13rem 1rem 2rem;
+      transition: padding-top 0.3s ease;
+    }
+
+    section {
+      margin-bottom: 3rem;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      color: var(--primary);
+      border-bottom: 2px solid var(--primary);
+      padding-bottom: 0.5rem;
+      margin-bottom: 2rem;
+      position: relative;
+    }
+
+    h2::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 50px;
+      height: 2px;
+      background: linear-gradient(90deg, var(--primary), transparent);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background-color: var(--card-bg);
+      padding: 1.5rem;
+      border-radius: 0.75rem;
+      border: 1px solid var(--border);
+      box-shadow: 0 4px 6px var(--shadow);
+      transition: all 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 25px var(--shadow);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      font-size: 1.1rem;
+      color: #f59e0b;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .card h3::before {
+      content: 
+    }
+
+    /* Experience Grid Styles */
+    .experience-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 1.5rem 0;
+    }
+
+    .experience-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+
+    .experience-item {
+      opacity: 0;
+      animation: fadeInUp 0.6s ease forwards;
+    }
+
+    .experience-item:nth-child(1) { animation-delay: 0.1s; }
+    .experience-item:nth-child(2) { animation-delay: 0.2s; }
+    .experience-item:nth-child(3) { animation-delay: 0.3s; }
+    .experience-item:nth-child(4) { animation-delay: 0.4s; }
+
+    .experience-content {
+      background-color: var(--card-bg);
+      padding: 1rem;
+      border-radius: 0.75rem;
+      box-shadow: 0 4px 16px var(--shadow);
+      border: 1px solid var(--border);
+      transition: all 0.3s ease;
+      text-align: left;
+      height: auto;
+      min-height: fit-content;
+    }
+
+    .experience-content:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px var(--shadow);
+    }
+
+    .job-title {
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: var(--primary);
+      margin-bottom: 0.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .job-title::before {
+      content: '💼';
+      font-size: 1rem;
+    }
+
+    .company {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--fg);
+      margin-bottom: 0.25rem;
+    }
+
+    .period {
+      color: var(--muted);
+      font-size: 0.85rem;
+      font-style: italic;
+      margin-bottom: 0;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .period::before {
+      content: '📅';
+      font-size: 0.8rem;
+    }
+
+    .job-description {
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .experience-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .experience-container {
+        padding: 1rem;
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 4rem;
+      padding: 2rem 1rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+      background: linear-gradient(135deg, var(--card-bg), var(--bg));
+    }
+
+    footer a {
+      color: var(--primary);
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+      color: var(--timeline-dot-active);
+    }
+  </style>
+</head>
+<body>
+
+  <header id="page-header">
+    <h1>Wildes Hanada</h1>
+    <div class="full-info">
+      <p>DevOps | SRE | Cloud</p>
+      <div class="social">
+        <a href="https://github.com/whanada" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/wildes-hanada-4572a7240" target="_blank">LinkedIn</a>
+        <a href="https://drive.google.com/file/d/1mIM-D55F9dbhGlFTkpuvR-h0yPETlgrb/view?usp=sharing" target="_blank">Curriculum Vitae</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <h2>Resumo Profissional</h2>
+      <p>DevOps / SRE Bilíngue, com mais de 12 anos de experiência sólida em Infraestrutura de TI, Sistemas Distribuídos Multi-Cloud, Arquitetura de Software distribuído, Orquestração de Containers e Esteiras CI/CD. Forte atuação com ferramentas Open Source, Linux, Observabilidade, Automação de Processos com IaC, Segurança da Informação com foco em alta disponibilidade e resiliência de ambientes críticos.</p>
+    </section>
+
+    <section>
+      <h2>Hard Skills</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Cloud & Containers</h3>
+          <p>Oracle Cloud, GCP, Hetzner, Docker, Kubernetes, Helm</p>
+        </div>
+        <div class="card">
+          <h3>Automação & Scripting</h3>
+          <p>Ansible, Puppet, Jenkins, Rundeck, Shell, Python, Vault</p>
+        </div>
+        <div class="card">
+          <h3>Observabilidade</h3>
+          <p>Zabbix, Grafana, Elastic Stack, Prometheus, Graylog</p>
+        </div>
+        <div class="card">
+          <h3>Segurança</h3>
+          <p>Fail2Ban, Snort, ModSecurity, Firewalls (Fortigate, Pfsense)</p>
+        </div>
+        <div class="card">
+          <h3>Servidores & Storage</h3>
+          <p>VMware, ProxMox, Dell iDrac, HP iLO, TrueNAS, MinIO</p>
+        </div>
+        <div class="card">
+          <h3>Redes & Protocolos</h3>
+          <p>IPv4/6, VPN, VLAN, Routing, OSPF, VRRP, ARP, DNS</p>
+        </div>
+        <div class="card">
+          <h3>Versionamento & SAST</h3>
+          <p>Git, GitHub, GitLab, SonarQube</p>
+        </div>
+        <div class="card">
+          <h3>Web & Mail Servers</h3>
+          <p>Nginx, Apache, Tomcat, IIS, Zimbra, cPanel</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Experiência Profissional</h2>
+      <div class="experience-container">
+        <div class="experience-grid">
+          <div class="experience-item">
+            <div class="experience-content">
+              <div class="job-title">Analista de Infraestrutura de TI</div>
+              <div class="company">Open Data Center</div>
+              <div class="period">Desde Dezembro 2024 • Presencial</div>
+            </div>
+          </div>
+
+          <div class="experience-item">
+            <div class="experience-content">
+              <div class="job-title">Tech Lead | DevOps</div>
+              <div class="company">OpenK Tecnologia</div>
+              <div class="period">Agosto 2021 - Novembro 2024 • 3 anos e 4 meses • Presencial</div>
+            </div>
+          </div>
+
+          <div class="experience-item">
+            <div class="experience-content">
+              <div class="job-title">Administrador de Redes</div>
+              <div class="company">Grupo Lírios – Lírios Incorporação</div>
+              <div class="period">Agosto 2015 - Julho 2021 • 6 anos • Presencial</div>
+            </div>
+          </div>
+
+          <div class="experience-item">
+            <div class="experience-content">
+              <div class="job-title">Administrador de Redes</div>
+              <div class="company">CDA Alimentos - Tio Jorge</div>
+              <div class="period">Março 2014 - Julho 2015 • 1 ano e 4 meses • Presencial</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Contato: <a href="mailto:wildes.hn@gmail.com">wildes.hn@gmail.com</a> • <a href="https://wa.me/5562981240423" target="_blank">(62) 98124-0423</a></p>
+  </footer>
+
+  <script>
+    const header = document.getElementById('page-header');
+    const main = document.querySelector('main');
+
+    function adjustMainPadding() {
+      header.classList.remove('shrink');
+      const height = header.offsetHeight;
+      main.style.paddingTop = `${height + 40}px`;
+    }
+
+    function adjustHeaderShrink() {
+      if (window.scrollY > 60) {
+        header.classList.add('shrink');
+      } else {
+        header.classList.remove('shrink');
+      }
+    }
+
+    // Intersection Observer para animações da experiência
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.animationPlayState = 'running';
+        }
+      });
+    }, observerOptions);
+
+    // Observar todos os itens da experiência
+    document.querySelectorAll('.experience-item').forEach(item => {
+      observer.observe(item);
+    });
+
+    window.addEventListener('load', () => {
+      adjustMainPadding();
+      adjustHeaderShrink();
+    });
+
+    window.addEventListener('scroll', adjustHeaderShrink);
+    window.addEventListener('resize', adjustMainPadding);
+  </script>
+
+</body>
+</html>
+
