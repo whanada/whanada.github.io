@@ -1,500 +1,1079 @@
-<!DOCTYPE html>
-
-
-
-<html lang="pt-BR">
+<!doctype html>
+<html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Currículo - Wildes Hanada</title>
-<style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Wildes Hanada is a senior cloud infrastructure and platform engineer specializing in globally distributed systems, Proxmox, Ceph, Kubernetes, automation, and observability.">
+  <meta name="author" content="Wildes Hanada">
+  <meta name="theme-color" content="#08111f">
+  <meta name="color-scheme" content="dark">
+
+  <title>Wildes Hanada — Cloud Infrastructure &amp; Platform Engineer</title>
+
+  <link rel="canonical" href="https://whanada.github.io/">
+  <meta property="og:type" content="profile">
+  <meta property="og:url" content="https://whanada.github.io/">
+  <meta property="og:title" content="Wildes Hanada — Cloud Infrastructure &amp; Platform Engineer">
+  <meta property="og:description" content="Global infrastructure, platform reliability, Kubernetes, Proxmox, Ceph, automation, and observability.">
+  <meta property="profile:first_name" content="Wildes">
+  <meta property="profile:last_name" content="Hanada">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Wildes Hanada — Cloud Infrastructure &amp; Platform Engineer">
+  <meta name="twitter:description" content="Global infrastructure, platform reliability, Kubernetes, Proxmox, Ceph, automation, and observability.">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Wildes Hanada",
+    "url": "https://whanada.github.io/",
+    "email": "mailto:wildes.hn@gmail.com",
+    "jobTitle": "Cloud Infrastructure and Platform Engineer",
+    "sameAs": [
+      "https://github.com/whanada",
+      "https://www.linkedin.com/in/hwildes"
+    ],
+    "knowsAbout": [
+      "Cloud Infrastructure",
+      "Platform Engineering",
+      "Site Reliability Engineering",
+      "Proxmox VE",
+      "Ceph",
+      "Kubernetes",
+      "Ansible",
+      "Observability"
+    ]
+  }
+  </script>
+
+  <style>
     :root {
-      --bg: #f8fafc;
-      --fg: #0f172a;
-      --muted: #475569;
-      --primary: #2563eb;
-      --card-bg: #ffffff;
-      --border: #cbd5e1;
-      --timeline-line: #e2e8f0;
-      --timeline-dot: #2563eb;
-      --timeline-dot-active: #1d4ed8;
-      --shadow: rgba(0, 0, 0, 0.1);
+      --bg: #08111f;
+      --bg-soft: #0c1728;
+      --surface: rgba(15, 29, 49, 0.82);
+      --surface-strong: #101f34;
+      --text: #f4f8fc;
+      --muted: #a9b8ca;
+      --subtle: #71839a;
+      --line: rgba(157, 178, 204, 0.17);
+      --accent: #48d8c8;
+      --accent-strong: #7de9dc;
+      --accent-soft: rgba(72, 216, 200, 0.12);
+      --blue: #73a8ff;
+      --blue-soft: rgba(115, 168, 255, 0.12);
+      --shadow: 0 24px 80px rgba(0, 0, 0, 0.28);
+      --radius-lg: 1.5rem;
+      --radius-md: 1rem;
+      --max-width: 1180px;
     }
 
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --bg: #0f172a;
-        --fg: #f1f5f9;
-        --muted: #94a3b8;
-        --primary: #38bdf8;
-        --card-bg: #1e293b;
-        --border: #334155;
-        --timeline-line: #475569;
-        --timeline-dot: #38bdf8;
-        --timeline-dot-active: #0ea5e9;
-        --shadow: rgba(0, 0, 0, 0.3);
-      }
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
       margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: var(--bg);
-      color: var(--fg);
-      line-height: 1.6;
+      min-width: 320px;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 80% -10%, rgba(60, 111, 183, 0.22), transparent 34rem),
+        radial-gradient(circle at -10% 24%, rgba(72, 216, 200, 0.1), transparent 30rem),
+        var(--bg);
+      font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 16px;
+      line-height: 1.65;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
     }
 
-    header {
+    a {
+      color: inherit;
+    }
+
+    a:focus-visible,
+    button:focus-visible {
+      outline: 3px solid var(--accent);
+      outline-offset: 4px;
+    }
+
+    .skip-link {
       position: fixed;
+      top: 0.75rem;
+      left: 0.75rem;
+      z-index: 100;
+      padding: 0.7rem 1rem;
+      border-radius: 0.6rem;
+      color: var(--bg);
+      background: var(--accent);
+      font-weight: 800;
+      transform: translateY(-150%);
+      transition: transform 160ms ease;
+    }
+
+    .skip-link:focus {
+      transform: translateY(0);
+    }
+
+    .container {
+      width: min(calc(100% - 2rem), var(--max-width));
+      margin-inline: auto;
+    }
+
+    .site-header {
+      position: sticky;
       top: 0;
-      left: 0;
-      width: 100%;
-      background-color: var(--card-bg);
-      color: var(--fg);
-      border-bottom: 1px solid var(--border);
-      z-index: 1000;
-      padding: 1.5rem 1rem;
-      text-align: center;
-      transition: all 0.3s ease;
-      box-shadow: 0 2px 10px var(--shadow);
+      z-index: 20;
+      border-bottom: 1px solid transparent;
+      background: rgba(8, 17, 31, 0.74);
+      backdrop-filter: blur(18px);
+      transition: border-color 180ms ease, background 180ms ease;
     }
 
-    header.shrink {
-      padding: 0.5rem 1rem;
+    .site-header.scrolled {
+      border-color: var(--line);
+      background: rgba(8, 17, 31, 0.92);
     }
 
-    header .full-info {
-      transition: opacity 0.3s ease;
+    .nav {
+      min-height: 4.8rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.25rem;
     }
 
-    header.shrink .full-info {
-      opacity: 0;
-      pointer-events: none;
-      height: 0;
-      overflow: hidden;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 1.75rem;
-      transition: font-size 0.3s ease;
-      background: linear-gradient(135deg, var(--primary), #7c3aed);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    header.shrink h1 {
-      font-size: 1.25rem;
-    }
-
-    .social a {
-      margin: 0 0.5rem;
-      color: var(--primary);
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      color: var(--text);
       text-decoration: none;
-      font-weight: bold;
-      transition: all 0.3s ease;
-      padding: 0.25rem 0.5rem;
-      border-radius: 0.25rem;
+      font-size: 0.95rem;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      white-space: nowrap;
     }
 
-    .social a:hover {
-      background-color: var(--primary);
-      color: white;
+    .brand-mark {
+      width: 2.35rem;
+      height: 2.35rem;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(72, 216, 200, 0.45);
+      border-radius: 0.7rem;
+      color: var(--accent-strong);
+      background: var(--accent-soft);
+      font-size: 0.78rem;
+      letter-spacing: 0.06em;
+    }
+
+    .nav-links,
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 650;
+      transition: color 160ms ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .language-switcher {
+      display: inline-flex;
+      padding: 0.2rem;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.025);
+    }
+
+    .language-switcher button {
+      min-width: 2.2rem;
+      padding: 0.35rem 0.58rem;
+      border: 0;
+      border-radius: 999px;
+      color: var(--subtle);
+      background: transparent;
+      font: inherit;
+      font-size: 0.72rem;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .language-switcher button[aria-pressed="true"] {
+      color: var(--bg);
+      background: var(--accent);
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.55rem;
+      min-height: 2.85rem;
+      padding: 0.72rem 1rem;
+      border: 1px solid var(--line);
+      border-radius: 0.75rem;
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.035);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 800;
+      transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
+    }
+
+    .button:hover {
       transform: translateY(-2px);
+      border-color: rgba(72, 216, 200, 0.46);
+      background: var(--accent-soft);
+    }
+
+    .button.primary {
+      border-color: var(--accent);
+      color: #041311;
+      background: var(--accent);
+    }
+
+    .button.primary:hover {
+      background: var(--accent-strong);
+    }
+
+    .button svg,
+    .text-link svg {
+      width: 1rem;
+      height: 1rem;
+      flex: 0 0 auto;
     }
 
     main {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 13rem 1rem 2rem;
-      transition: padding-top 0.3s ease;
+      overflow: clip;
     }
 
-    section {
+    .hero {
+      position: relative;
+      padding: 7.5rem 0 4.5rem;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 34rem;
+      height: 34rem;
+      top: -15rem;
+      right: -12rem;
+      border: 1px solid rgba(115, 168, 255, 0.12);
+      border-radius: 50%;
+      box-shadow:
+        0 0 0 5rem rgba(115, 168, 255, 0.025),
+        0 0 0 10rem rgba(72, 216, 200, 0.018);
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.45fr) minmax(250px, 0.55fr);
+      align-items: end;
+      gap: 4rem;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin: 0 0 1.3rem;
+      color: var(--accent-strong);
+      font-size: 0.78rem;
+      font-weight: 850;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 1.8rem;
+      height: 1px;
+      background: var(--accent);
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      max-width: 900px;
+      margin-bottom: 1.5rem;
+      font-size: clamp(3rem, 7.5vw, 6.9rem);
+      line-height: 0.96;
+      letter-spacing: -0.065em;
+    }
+
+    .hero-highlight {
+      color: transparent;
+      background: linear-gradient(110deg, var(--accent-strong), var(--blue));
+      background-clip: text;
+      -webkit-background-clip: text;
+    }
+
+    .hero-copy {
+      max-width: 720px;
+      margin-bottom: 2.2rem;
+      color: var(--muted);
+      font-size: clamp(1rem, 2vw, 1.24rem);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
+
+    .availability {
+      align-self: end;
+      padding: 1.3rem;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      background: linear-gradient(145deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.015));
+      box-shadow: var(--shadow);
+    }
+
+    .status {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-bottom: 0.75rem;
+      color: var(--accent-strong);
+      font-size: 0.75rem;
+      font-weight: 850;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .status-dot {
+      width: 0.62rem;
+      height: 0.62rem;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 0.35rem rgba(72, 216, 200, 0.11);
+    }
+
+    .availability strong {
+      display: block;
+      margin-bottom: 0.25rem;
+      font-size: 1.05rem;
+    }
+
+    .availability p {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    .metrics {
+      padding-bottom: 6rem;
+    }
+
+    .metric-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-block: 1px solid var(--line);
+    }
+
+    .metric {
+      min-height: 10rem;
+      padding: 1.8rem 1.6rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border-right: 1px solid var(--line);
+    }
+
+    .metric:first-child {
+      border-left: 1px solid var(--line);
+    }
+
+    .metric-value {
+      display: block;
+      margin-bottom: 0.3rem;
+      color: var(--text);
+      font-size: clamp(2rem, 5vw, 3.3rem);
+      font-weight: 850;
+      line-height: 1;
+      letter-spacing: -0.055em;
+    }
+
+    .metric-label {
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    .section {
+      padding: 6.5rem 0;
+      scroll-margin-top: 5rem;
+    }
+
+    .section.alt {
+      border-block: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.017);
+    }
+
+    .section-heading {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 3rem;
       margin-bottom: 3rem;
     }
 
+    .section-kicker {
+      margin-bottom: 0.8rem;
+      color: var(--accent-strong);
+      font-size: 0.74rem;
+      font-weight: 850;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
     h2 {
-      font-size: 1.5rem;
-      color: var(--primary);
-      border-bottom: 2px solid var(--primary);
-      padding-bottom: 0.5rem;
-      margin-bottom: 2rem;
-      position: relative;
+      margin-bottom: 0;
+      font-size: clamp(2rem, 4.5vw, 3.8rem);
+      line-height: 1.06;
+      letter-spacing: -0.045em;
     }
 
-    h2::after {
-      content: '';
-      position: absolute;
-      bottom: -2px;
-      left: 0;
-      width: 50px;
-      height: 2px;
-      background: linear-gradient(90deg, var(--primary), transparent);
+    .section-intro {
+      max-width: 650px;
+      align-self: end;
+      margin-bottom: 0.2rem;
+      color: var(--muted);
+      font-size: 1.02rem;
     }
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
-    }
-
-    .card {
-      background-color: var(--card-bg);
-      padding: 1.5rem;
-      border-radius: 0.75rem;
-      border: 1px solid var(--border);
-      box-shadow: 0 4px 6px var(--shadow);
-      transition: all 0.3s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 25px var(--shadow);
-    }
-
-    .card h3 {
-      margin-top: 0;
-      font-size: 1.1rem;
-      color: #f59e0b;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .card h3::before {
-      content: 
-    }
-
-    /* Experience Grid Styles */
-    .experience-container {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 1.5rem 0;
-    }
-
-    .experience-grid {
+    .case-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 1.5rem;
+      gap: 1rem;
     }
 
-    .experience-item {
-      opacity: 0;
-      animation: fadeInUp 0.6s ease forwards;
-    }
-
-    .experience-item:nth-child(1) { animation-delay: 0.1s; }
-    .experience-item:nth-child(2) { animation-delay: 0.2s; }
-    .experience-item:nth-child(3) { animation-delay: 0.3s; }
-    .experience-item:nth-child(4) { animation-delay: 0.4s; }
-
-    .experience-content {
-      background-color: var(--card-bg);
-      padding: 1rem;
-      border-radius: 0.75rem;
-      box-shadow: 0 4px 16px var(--shadow);
-      border: 1px solid var(--border);
-      transition: all 0.3s ease;
-      text-align: left;
-      height: auto;
-      min-height: fit-content;
-    }
-
-    .experience-content:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 24px var(--shadow);
-    }
-
-    .job-title {
-      font-size: 1.1rem;
-      font-weight: bold;
-      color: var(--primary);
-      margin-bottom: 0.25rem;
+    .case-card {
+      position: relative;
+      min-height: 27rem;
+      padding: 2rem;
       display: flex;
-      align-items: center;
-      gap: 0.5rem;
+      flex-direction: column;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      background:
+        linear-gradient(145deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.012)),
+        var(--bg-soft);
+      overflow: hidden;
+      transition: transform 180ms ease, border-color 180ms ease;
     }
 
-    .job-title::before {
-      content: '💼';
-      font-size: 1rem;
+    .case-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(72, 216, 200, 0.35);
     }
 
-    .company {
-      font-size: 1rem;
-      font-weight: 600;
-      color: var(--fg);
-      margin-bottom: 0.25rem;
+    .case-card::after {
+      content: attr(data-index);
+      position: absolute;
+      right: -0.2rem;
+      bottom: -3.6rem;
+      color: rgba(255, 255, 255, 0.025);
+      font-size: 12rem;
+      font-weight: 900;
+      line-height: 1;
+      pointer-events: none;
     }
 
-    .period {
+    .case-meta {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 3rem;
+      color: var(--subtle);
+      font-size: 0.75rem;
+      font-weight: 750;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .case-card h3 {
+      max-width: 450px;
+      margin-bottom: 1rem;
+      font-size: clamp(1.45rem, 3vw, 2.15rem);
+      line-height: 1.12;
+      letter-spacing: -0.035em;
+    }
+
+    .case-card p {
+      max-width: 600px;
+      margin-bottom: 1.5rem;
       color: var(--muted);
-      font-size: 0.85rem;
-      font-style: italic;
-      margin-bottom: 0;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
     }
 
-    .period::before {
-      content: '📅';
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin-top: auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .tag {
+      padding: 0.4rem 0.65rem;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: #c2cede;
+      background: rgba(255, 255, 255, 0.025);
+      font-size: 0.72rem;
+      font-weight: 700;
+    }
+
+    .timeline {
+      border-top: 1px solid var(--line);
+    }
+
+    .role {
+      display: grid;
+      grid-template-columns: 0.52fr 0.9fr 1.58fr;
+      gap: 2rem;
+      padding: 2.2rem 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .role-period,
+    .role-location {
+      color: var(--subtle);
+      font-size: 0.82rem;
+      font-weight: 700;
+    }
+
+    .role h3 {
+      margin-bottom: 0.3rem;
+      font-size: 1.15rem;
+      letter-spacing: -0.02em;
+    }
+
+    .role-company {
+      margin-bottom: 0.5rem;
+      color: var(--accent-strong);
+      font-size: 0.9rem;
+      font-weight: 750;
+    }
+
+    .role-description {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .capability-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+
+    .capability {
+      min-height: 15rem;
+      padding: 1.6rem;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      background: var(--surface);
+    }
+
+    .capability-number {
+      display: block;
+      margin-bottom: 2rem;
+      color: var(--accent);
+      font-family: ui-monospace, "Cascadia Code", Consolas, monospace;
+      font-size: 0.78rem;
+    }
+
+    .capability h3 {
+      margin-bottom: 0.75rem;
+      font-size: 1.08rem;
+    }
+
+    .capability p {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    .contact-panel {
+      position: relative;
+      padding: clamp(2rem, 6vw, 4.5rem);
+      border: 1px solid rgba(72, 216, 200, 0.28);
+      border-radius: var(--radius-lg);
+      background:
+        radial-gradient(circle at 86% 15%, rgba(115, 168, 255, 0.18), transparent 24rem),
+        linear-gradient(130deg, rgba(72, 216, 200, 0.08), rgba(255, 255, 255, 0.025));
+      overflow: hidden;
+    }
+
+    .contact-panel h2 {
+      max-width: 800px;
+      margin-bottom: 1.25rem;
+    }
+
+    .contact-panel p {
+      max-width: 680px;
+      margin-bottom: 2rem;
+      color: var(--muted);
+      font-size: 1.02rem;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
+
+    .site-footer {
+      padding: 2.2rem 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      color: var(--subtle);
       font-size: 0.8rem;
     }
 
-    .job-description {
+    .footer-links {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .footer-links a {
       color: var(--muted);
-      line-height: 1.6;
-    }
-
-    /* Responsive Design */
-    @media (max-width: 768px) {
-      .experience-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-      }
-
-      .experience-container {
-        padding: 1rem;
-      }
-    }
-
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    footer {
-      text-align: center;
-      margin-top: 4rem;
-      padding: 2rem 1rem;
-      font-size: 0.9rem;
-      color: var(--muted);
-      border-top: 1px solid var(--border);
-      background: linear-gradient(135deg, var(--card-bg), var(--bg));
-    }
-
-    footer a {
-      color: var(--primary);
       text-decoration: none;
-      transition: all 0.3s ease;
     }
 
-    footer a:hover {
-      text-decoration: underline;
-      color: var(--timeline-dot-active);
+    .footer-links a:hover {
+      color: var(--accent-strong);
+    }
+
+    @media (max-width: 960px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hero-grid,
+      .section-heading {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .availability {
+        max-width: 360px;
+      }
+
+      .metric-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .metric:nth-child(2) {
+        border-right: 1px solid var(--line);
+      }
+
+      .metric:nth-child(-n + 2) {
+        border-bottom: 1px solid var(--line);
+      }
+
+      .metric:nth-child(3) {
+        border-left: 1px solid var(--line);
+      }
+
+      .case-grid,
+      .capability-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .role {
+        grid-template-columns: 0.6fr 1.1fr 1.5fr;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .container {
+        width: min(calc(100% - 1.25rem), var(--max-width));
+      }
+
+      .site-header .button {
+        display: none;
+      }
+
+      .nav-actions {
+        gap: 0.5rem;
+      }
+
+      .hero {
+        padding-top: 5.5rem;
+      }
+
+      h1 {
+        font-size: clamp(3rem, 16vw, 5rem);
+      }
+
+      .metrics {
+        padding-bottom: 3rem;
+      }
+
+      .metric {
+        min-height: 8.5rem;
+        padding: 1.25rem 1rem;
+      }
+
+      .metric-value {
+        font-size: 2.25rem;
+      }
+
+      .section {
+        padding: 4.5rem 0;
+      }
+
+      .case-grid,
+      .capability-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .case-card {
+        min-height: 24rem;
+        padding: 1.4rem;
+      }
+
+      .role {
+        grid-template-columns: 1fr;
+        gap: 0.65rem;
+      }
+
+      .role-period {
+        order: 2;
+      }
+
+      .role-main {
+        order: 1;
+      }
+
+      .role-description {
+        order: 3;
+      }
+
+      .footer-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+      }
     }
   </style>
 </head>
+
 <body>
-<header id="page-header">
-<h1>Wildes Hanada</h1>
-<div class="full-info">
-<p>DevOps | SRE | Cloud</p>
-<div class="social">
-<a href="https://github.com/whanada" target="_blank">GitHub</a>
-<a href="https://www.linkedin.com/in/wildes-hanada-4572a7240" target="_blank">LinkedIn</a>
-<a href="https://drive.google.com/file/d/1PFPWpXhNLj7wPGLzlhYLvt5btJibab8m/view" target="_blank">Curriculum Vitae</a>
-</div>
-</div>
-</header>
-<main>
-<details open="True"><summary><h2>Resumo Profissional</h2></summary>
+  <a class="skip-link" href="#main-content" data-en="Skip to content" data-pt="Ir para o conteúdo">Skip to content</a>
 
-<p>DevOps / SRE Bilíngue, com mais de 15 anos de experiência sólida em Infraestrutura de TI, Sistemas Distribuídos Multi-Cloud, Arquitetura de Software distribuído, Orquestração de Containers e Esteiras CI/CD. Forte atuação com ferramentas Open Source, Linux, Observabilidade, Automação de Processos com IaC, Segurança da Informação com foco em alta disponibilidade e resiliência de ambientes críticos.</p>
-</details>
-<details open="False"><summary><h2>Hard Skills</h2></summary>
+  <header class="site-header" id="site-header">
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="Wildes Hanada — home">
+        <span class="brand-mark" aria-hidden="true">WH</span>
+        <span>Wildes Hanada</span>
+      </a>
 
-<div class="grid">
-<div class="card">
-<h3>Inglês</h3>
-<p>Fluente</p>
-</div>
-<div class="card">
-<h3>Observabilidade</h3>
-<p>Zabbix, Elastic Stack, OpenSearch Stack, Prometheus, Graylog, Elastiflow/sflow/netflow</p>
-</div>
-<div class="card">
-<h3>Orquestração de Containers</h3>
-<p>Docker (Swarm, Registry, Docker File), Kubernetes, Helm</p>
-</div>
-<div class="card">
-<h3>Clouds</h3>
-<p>Oracle Cloud Infrastructure, Google Cloud Platform, Hetzner</p>
-</div>
-<div class="card">
-<h3>Scripting e Automação</h3>
-<p>Ansible, Puppet, Rundeck, Jenkins, Shell, Powershell, Python, Vault</p>
-</div>
-<div class="card">
-<h3>Data Platforms – SQL e NoSQL</h3>
-<p>MySQL, PostgreSQL, PgBouncer, TimescaleDB, Solr, Elastic Stack, OpenSearch Stack, Redis, DragonFly</p>
-</div>
-<div class="card">
-<h3>Web Servers</h3>
-<p>Nginx, Nginx ModSecurity, Varnish, IIS, Apache, Tomcat, JBoss, Traefik, Let’s Encrypt, SSL, Cloudflare</p>
-</div>
-<div class="card">
-<h3>Clouflare</h3>
-<p>DNS, Proxied DNS, Caching, Load Balancing, Aceleramento de TCP, Security Rules, Edge Certiticates, Origin Certificates, WEB Page Rules, Workers</p>
-</div>
-<div class="card">
-<h3>CDN / WAF</h3>
-<p>Azion, Cloudflare, Imperva</p>
-</div>
-<div class="card">
-<h3>Versionamento de Código</h3>
-<p>Git, GitLab, GitHub</p>
-</div>
-<div class="card">
-<h3>SAST</h3>
-<p>SonarQube</p>
-</div>
-<div class="card">
-<h3>Message Brokers</h3>
-<p>RabbitMQ, Kafka</p>
-</div>
-<div class="card">
-<h3>Storage</h3>
-<p>TrueNAS, MinIO, S3</p>
-</div>
-<div class="card">
-<h3>OS</h3>
-<p>Linux, Windows Server Administration and Services</p>
-</div>
-<div class="card">
-<h3>IDS / IPS</h3>
-<p>Fail2Ban, Snort</p>
-</div>
-<div class="card">
-<h3>Security Endpoints</h3>
-<p>Bitdefender, Sophos</p>
-</div>
-<div class="card">
-<h3>Mail Suites</h3>
-<p>Google Workspace, Microsoft 365 Online, cPanel, Zimbra</p>
-</div>
-<div class="card">
-<h3>Firewall &amp; NGFW</h3>
-<p>Sonicwall, Fortigate, Pfsense</p>
-</div>
-<div class="card">
-<h3>Backup / Archive</h3>
-<p>Quest Rapid Recovery, IBM TSM, Tape Library, LTO</p>
-</div>
-<div class="card">
-<h3>Hypervisors</h3>
-<p>VMware, KVM, Hyper-V, ProxMox, XenServer</p>
-</div>
-<div class="card">
-<h3>Networking</h3>
-<p>IPv4, IPv6, Switches, VoIP, SAN, HBA, FC, iSCSI, SFP, VLAN, LACP, ARP, Port Mirroring, Routing, OSPF, WLAN, VRRP, VPN, DNS</p>
-</div>
-<div class="card">
-<h3>Servidores e Storages</h3>
-<p>Dell, IBM/Lenovo, HP – iDrac, iLO</p>
-</div>
-<div class="card">
-<h3>ERP</h3>
-<p>Infraestrutura TOTVS RM em 3 camadas, Smart Client, TOTVS Fluig, Servidor de Licenças</p>
-</div>
-<div class="card">
-<h3>Device Management</h3>
-<p>Citrix Endpoint Management</p>
-</div>
-</div>
-</details>
-<details open="False"><summary><h2>Experiências Recentes</h2></summary>
+      <nav class="nav-links" aria-label="Primary navigation" data-aria-en="Primary navigation" data-aria-pt="Navegação principal">
+        <a href="#impact" data-en="Impact" data-pt="Impacto">Impact</a>
+        <a href="#experience" data-en="Experience" data-pt="Experiência">Experience</a>
+        <a href="#capabilities" data-en="Capabilities" data-pt="Competências">Capabilities</a>
+        <a href="#contact" data-en="Contact" data-pt="Contato">Contact</a>
+      </nav>
 
-<div class="experience-container">
-<div class="experience-grid">
-<div class="experience-item">
-<div class="experience-content">
-<div class="job-title">Engenheiro DevOps</div>
-<div class="company">Open Data Center</div>
-<div class="period">Desde Dezembro 2024 • Presencial</div>
-</div>
-</div>
-<div class="experience-item">
-<div class="experience-content">
-<div class="job-title">Tech Lead | DevOps</div>
-<div class="company">OpenK Tecnologia</div>
-<div class="period">Agosto 2021 - Novembro 2024 • 3 anos e 4 meses • Presencial</div>
-</div>
-</div>
-<div class="experience-item">
-<div class="experience-content">
-<div class="job-title">Administrador de Redes</div>
-<div class="company">Grupo Lírios – Lírios Incorporação</div>
-<div class="period">Agosto 2015 - Julho 2021 • 6 anos • Presencial</div>
-</div>
-</div>
-<div class="experience-item">
-<div class="experience-content">
-<div class="job-title">Administrador de Redes</div>
-<div class="company">CDA Alimentos - Tio Jorge</div>
-<div class="period">Março 2014 - Julho 2015 • 1 ano e 4 meses • Presencial</div>
-</div>
-</div>
-</div>
-</div>
-</details>
-</main>
-<footer>
-<p>Contato: <a href="mailto:wildes.hn@gmail.com">wildes.hn@gmail.com</a> • <a href="https://wa.me/5562981240423" target="_blank">(62) 98124-0423</a></p>
-</footer>
-<script>
-    const header = document.getElementById('page-header');
-    const main = document.querySelector('main');
+      <div class="nav-actions">
+        <div class="language-switcher" aria-label="Language" data-aria-en="Language" data-aria-pt="Idioma">
+          <button type="button" data-language="en" aria-pressed="true">EN</button>
+          <button type="button" data-language="pt" aria-pressed="false">PT</button>
+        </div>
+        <a class="button" href="Wildes-Hanada-Cloud-Infrastructure-Platform-Engineer-2026.pdf" download>
+          <span data-en="Résumé" data-pt="Currículo">Résumé</span>
+          <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14"/></svg>
+        </a>
+      </div>
+    </div>
+  </header>
 
-    function adjustMainPadding() {
-      header.classList.remove('shrink');
-      const height = header.offsetHeight;
-      main.style.paddingTop = `${height + 40}px`;
-    }
+  <main id="main-content">
+    <section class="hero" id="top">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow" data-en="Cloud infrastructure · Platform engineering · Reliability" data-pt="Infraestrutura cloud · Engenharia de plataforma · Confiabilidade">Cloud infrastructure · Platform engineering · Reliability</p>
+          <h1>
+            <span data-en="Infrastructure built for" data-pt="Infraestrutura criada para">Infrastructure built for</span>
+            <span class="hero-highlight" data-en="real-world scale." data-pt="escala de verdade.">real-world scale.</span>
+          </h1>
+          <p class="hero-copy" data-en="Senior Cloud Infrastructure &amp; Platform Engineer with 15+ years of experience modernizing and operating distributed environments across cloud and data centers—with deep hands-on expertise in Proxmox, Ceph, Kubernetes, automation, and observability." data-pt="Engenheiro Sênior de Infraestrutura Cloud e Plataforma com mais de 15 anos de experiência modernizando e operando ambientes distribuídos em cloud e data centers, com forte atuação prática em Proxmox, Ceph, Kubernetes, automação e observabilidade.">Senior Cloud Infrastructure &amp; Platform Engineer with 15+ years of experience modernizing and operating distributed environments across cloud and data centers—with deep hands-on expertise in Proxmox, Ceph, Kubernetes, automation, and observability.</p>
+          <div class="hero-actions">
+            <a class="button primary" href="#impact">
+              <span data-en="Explore selected impact" data-pt="Ver principais resultados">Explore selected impact</span>
+              <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+            </a>
+            <a class="button" href="mailto:wildes.hn@gmail.com">
+              <span data-en="Start a conversation" data-pt="Iniciar uma conversa">Start a conversation</span>
+            </a>
+          </div>
+        </div>
 
-    function adjustHeaderShrink() {
-      if (window.scrollY > 60) {
-        header.classList.add('shrink');
-      } else {
-        header.classList.remove('shrink');
-      }
-    }
+        <aside class="availability" aria-label="Current role" data-aria-en="Current role" data-aria-pt="Cargo atual">
+          <div class="status"><span class="status-dot" aria-hidden="true"></span><span data-en="Current role" data-pt="Cargo atual">Current role</span></div>
+          <strong data-en="Cloud Operations Engineer" data-pt="Engenheiro de Operações Cloud">Cloud Operations Engineer</strong>
+          <p>EdgeUno · AS7195<br><span data-en="Global infrastructure · Jan 2026—Present" data-pt="Infraestrutura global · Jan 2026—Atual">Global infrastructure · Jan 2026—Present</span><br><span data-en="Fluent English · Native Portuguese" data-pt="Inglês fluente · Português nativo">Fluent English · Native Portuguese</span></p>
+        </aside>
+      </div>
+    </section>
 
-    // Intersection Observer para animações da experiência
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    };
+    <section class="metrics" aria-label="Career scale" data-aria-en="Career scale" data-aria-pt="Escala da carreira">
+      <div class="container metric-grid">
+        <div class="metric">
+          <span class="metric-value">50+</span>
+          <span class="metric-label" data-en="data centers across 20 countries" data-pt="data centers em 20 países">data centers across 20 countries</span>
+        </div>
+        <div class="metric">
+          <span class="metric-value">1,000+</span>
+          <span class="metric-label" data-en="horizontally scaled containers" data-pt="containers escalados horizontalmente">horizontally scaled containers</span>
+        </div>
+        <div class="metric">
+          <span class="metric-value">500+</span>
+          <span class="metric-label" data-en="distributed databases operated" data-pt="bancos de dados distribuídos operados">distributed databases operated</span>
+        </div>
+        <div class="metric">
+          <span class="metric-value">1M+</span>
+          <span class="metric-label" data-en="API requests per minute supported" data-pt="requisições de API por minuto suportadas">API requests per minute supported</span>
+        </div>
+      </div>
+    </section>
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.style.animationPlayState = 'running';
+    <section class="section alt" id="impact">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker" data-en="Selected impact" data-pt="Impacto selecionado">Selected impact</p>
+            <h2 data-en="Scale is only useful when it stays reliable." data-pt="Escala só é útil quando continua confiável.">Scale is only useful when it stays reliable.</h2>
+          </div>
+          <p class="section-intro" data-en="A selection of infrastructure and platform work spanning global data centers, Kubernetes operations, observability, and high-throughput digital commerce." data-pt="Uma seleção de trabalhos em infraestrutura e plataforma envolvendo data centers globais, operações Kubernetes, observabilidade e comércio digital de alto volume.">A selection of infrastructure and platform work spanning global data centers, Kubernetes operations, observability, and high-throughput digital commerce.</p>
+        </div>
+
+        <div class="case-grid">
+          <article class="case-card" data-index="01">
+            <div class="case-meta"><span>EdgeUno</span><span>2026—</span></div>
+            <h3 data-en="Modernizing infrastructure across a global data-center footprint" data-pt="Modernização de infraestrutura em uma operação global de data centers">Modernizing infrastructure across a global data-center footprint</h3>
+            <p data-en="Supporting cloud operations across 50+ data centers in 20 countries, leading Proxmox VE, Backup Server, Ceph, storage migration, capacity, and lifecycle initiatives across international locations." data-pt="Atuação em operações cloud distribuídas por mais de 50 data centers em 20 países, liderando iniciativas com Proxmox VE, Backup Server, Ceph, migrações de storage, capacidade e ciclo de vida em localidades internacionais.">Supporting cloud operations across 50+ data centers in 20 countries, leading Proxmox VE, Backup Server, Ceph, storage migration, capacity, and lifecycle initiatives across international locations.</p>
+            <div class="tags"><span class="tag">Proxmox VE</span><span class="tag">Ceph</span><span class="tag">Ansible</span><span class="tag">Capacity planning</span></div>
+          </article>
+
+          <article class="case-card" data-index="02">
+            <div class="case-meta"><span>Open Data Center</span><span>2024—2025</span></div>
+            <h3 data-en="Building repeatable Kubernetes platforms for internal and customer workloads" data-pt="Criação de plataformas Kubernetes reproduzíveis para ambientes internos e de clientes">Building repeatable Kubernetes platforms for internal and customer workloads</h3>
+            <p data-en="Designed and operated 14 Kubernetes clusters supporting 200+ deployments. Automated cluster provisioning to approximately 20 minutes and improved application response times by more than 80% through database indexing and caching." data-pt="Projetou e operou 14 clusters Kubernetes com mais de 200 deployments. Automatizou o provisionamento de clusters para aproximadamente 20 minutos e melhorou o tempo de resposta das aplicações em mais de 80% com indexação de bancos e cache.">Designed and operated 14 Kubernetes clusters supporting 200+ deployments. Automated cluster provisioning to approximately 20 minutes and improved application response times by more than 80% through database indexing and caching.</p>
+            <div class="tags"><span class="tag">Kubernetes</span><span class="tag">Kubespray</span><span class="tag">Longhorn</span><span class="tag">KubeVIP</span><span class="tag">Ansible</span></div>
+          </article>
+
+          <article class="case-card" data-index="03">
+            <div class="case-meta"><span>Open Data Center</span><span>Observability</span></div>
+            <h3 data-en="Creating operational visibility across four data centers and the NOC" data-pt="Criação de visibilidade operacional em quatro data centers e no NOC">Creating operational visibility across four data centers and the NOC</h3>
+            <p data-en="Led observability modernization across three Brazilian data centers, one US location, and NOC operations—implementing monitoring, logs, network flow collection, SQL reporting, and dashboards from the ground up." data-pt="Liderou a modernização da observabilidade em três data centers no Brasil, um nos Estados Unidos e no NOC, implementando do zero monitoramento, logs, coleta de fluxos de rede, relatórios SQL e dashboards.">Led observability modernization across three Brazilian data centers, one US location, and NOC operations—implementing monitoring, logs, network flow collection, SQL reporting, and dashboards from the ground up.</p>
+            <div class="tags"><span class="tag">Zabbix</span><span class="tag">OpenSearch</span><span class="tag">Graylog</span><span class="tag">ElastiFlow</span><span class="tag">TimescaleDB</span></div>
+          </article>
+
+          <article class="case-card" data-index="04">
+            <div class="case-meta"><span>OpenK Tecnologia</span><span>2021—2024</span></div>
+            <h3 data-en="Keeping high-volume commerce integrations fast and dependable" data-pt="Confiabilidade e desempenho para integrações de comércio digital em alto volume">Keeping high-volume commerce integrations fast and dependable</h3>
+            <p data-en="Led infrastructure and DevOps operations supporting 1,000+ containers, 500+ MySQL databases, 400+ Nginx and Traefik hosts, approximately 100 deployments per day, and more than 1 million API requests per minute." data-pt="Liderou operações de infraestrutura e DevOps com mais de 1.000 containers, 500 bancos MySQL, 400 hosts Nginx e Traefik, aproximadamente 100 deploys por dia e mais de 1 milhão de requisições de API por minuto.">Led infrastructure and DevOps operations supporting 1,000+ containers, 500+ MySQL databases, 400+ Nginx and Traefik hosts, approximately 100 deployments per day, and more than 1 million API requests per minute.</p>
+            <div class="tags"><span class="tag">Docker</span><span class="tag">MySQL</span><span class="tag">Nginx</span><span class="tag">RabbitMQ</span><span class="tag">CI/CD</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="experience">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker" data-en="Experience" data-pt="Experiência">Experience</p>
+            <h2 data-en="From the server room to global platforms." data-pt="Da sala de servidores às plataformas globais.">From the server room to global platforms.</h2>
+          </div>
+          <p class="section-intro" data-en="More than 15 years progressing from hands-on systems and network administration to technical leadership and globally distributed cloud operations." data-pt="Mais de 15 anos de evolução, da administração prática de sistemas e redes à liderança técnica e operações cloud globalmente distribuídas.">More than 15 years progressing from hands-on systems and network administration to technical leadership and globally distributed cloud operations.</p>
+        </div>
+
+        <div class="timeline">
+          <article class="role">
+            <div class="role-period">Jan 2026—<span data-en="Present" data-pt="Atual">Present</span><br><span class="role-location" data-en="Global operations" data-pt="Operações globais">Global operations</span></div>
+            <div class="role-main"><h3 data-en="Cloud Operations Engineer" data-pt="Engenheiro de Operações Cloud">Cloud Operations Engineer</h3><p class="role-company">EdgeUno · AS7195</p></div>
+            <p class="role-description" data-en="Infrastructure modernization, Proxmox and Ceph lifecycle operations, storage migrations, capacity planning, automation, telemetry, and cross-functional delivery across 50+ data centers." data-pt="Modernização de infraestrutura, ciclo de vida de Proxmox e Ceph, migrações de storage, planejamento de capacidade, automação, telemetria e entregas multidisciplinares em mais de 50 data centers.">Infrastructure modernization, Proxmox and Ceph lifecycle operations, storage migrations, capacity planning, automation, telemetry, and cross-functional delivery across 50+ data centers.</p>
+          </article>
+
+          <article class="role">
+            <div class="role-period">Dec 2024—Dec 2025<br><span class="role-location">Goiânia, Brazil</span></div>
+            <div class="role-main"><h3 data-en="DevOps Engineer" data-pt="Engenheiro DevOps">DevOps Engineer</h3><p class="role-company">Open Data Center · AS262415</p></div>
+            <p class="role-description" data-en="Modernized observability, Kubernetes, databases, DNS, security, and CI/CD across internal infrastructure and customer environments in Brazil and the United States." data-pt="Modernizou observabilidade, Kubernetes, bancos de dados, DNS, segurança e CI/CD em infraestrutura interna e ambientes de clientes no Brasil e nos Estados Unidos.">Modernized observability, Kubernetes, databases, DNS, security, and CI/CD across internal infrastructure and customer environments in Brazil and the United States.</p>
+          </article>
+
+          <article class="role">
+            <div class="role-period">Aug 2021—Nov 2024<br><span class="role-location">Uberlândia, Brazil</span></div>
+            <div class="role-main"><h3 data-en="DevOps Engineer · Technical Lead" data-pt="Engenheiro DevOps · Líder Técnico">DevOps Engineer · Technical Lead</h3><p class="role-company">OpenK Tecnologia</p></div>
+            <p class="role-description" data-en="Led Infrastructure, DevOps, and Platform Operations teams for high-scale commerce integrations, multi-cloud services, CI/CD, observability, security, vendor management, and FinOps." data-pt="Liderou equipes de Infraestrutura, DevOps e Operações de Plataforma para integrações de comércio em larga escala, serviços multi-cloud, CI/CD, observabilidade, segurança, fornecedores e FinOps.">Led Infrastructure, DevOps, and Platform Operations teams for high-scale commerce integrations, multi-cloud services, CI/CD, observability, security, vendor management, and FinOps.</p>
+          </article>
+
+          <article class="role">
+            <div class="role-period">Aug 2015—Jul 2021<br><span class="role-location">Anápolis, Brazil</span></div>
+            <div class="role-main"><h3 data-en="Systems &amp; Network Administrator" data-pt="Administrador de Sistemas e Redes">Systems &amp; Network Administrator</h3><p class="role-company">Grupo Lírios</p></div>
+            <p class="role-description" data-en="Owned infrastructure supporting headquarters, warehouses, and 12 branches across four states, including data-center systems, Fibre Channel SAN, virtualization, networking, security, VoIP, and disaster recovery." data-pt="Responsável pela infraestrutura da matriz, depósitos e 12 filiais em quatro estados, incluindo data center, SAN Fibre Channel, virtualização, redes, segurança, VoIP e recuperação de desastres.">Owned infrastructure supporting headquarters, warehouses, and 12 branches across four states, including data-center systems, Fibre Channel SAN, virtualization, networking, security, VoIP, and disaster recovery.</p>
+          </article>
+
+          <article class="role">
+            <div class="role-period">2010—2015<br><span class="role-location" data-en="Earlier career" data-pt="Início da carreira">Earlier career</span></div>
+            <div class="role-main"><h3 data-en="Infrastructure, Consulting &amp; Field Operations" data-pt="Infraestrutura, Consultoria e Operações de Campo">Infrastructure, Consulting &amp; Field Operations</h3><p class="role-company">CDA Alimentos · Consulting · Midway Labs · Field Services</p></div>
+            <p class="role-description" data-en="Built the hands-on foundation in enterprise infrastructure, virtualization, backup, Active Directory, networking, Linux, security, hardware, and business continuity across food, healthcare, legal, logistics, and financial environments." data-pt="Construiu a base prática em infraestrutura empresarial, virtualização, backup, Active Directory, redes, Linux, segurança, hardware e continuidade de negócios nos setores de alimentos, saúde, jurídico, logística e financeiro.">Built the hands-on foundation in enterprise infrastructure, virtualization, backup, Active Directory, networking, Linux, security, hardware, and business continuity across food, healthcare, legal, logistics, and financial environments.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="capabilities">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker" data-en="Core capabilities" data-pt="Principais competências">Core capabilities</p>
+            <h2 data-en="Deep infrastructure roots. Platform-level thinking." data-pt="Base sólida em infraestrutura. Visão de plataforma.">Deep infrastructure roots. Platform-level thinking.</h2>
+          </div>
+          <p class="section-intro" data-en="A focused view of the technologies and operational disciplines used to build, automate, observe, and protect critical environments." data-pt="Uma visão objetiva das tecnologias e disciplinas operacionais usadas para construir, automatizar, observar e proteger ambientes críticos.">A focused view of the technologies and operational disciplines used to build, automate, observe, and protect critical environments.</p>
+        </div>
+
+        <div class="capability-grid">
+          <article class="capability"><span class="capability-number">01 / 06</span><h3 data-en="Cloud &amp; virtualization" data-pt="Cloud e virtualização">Cloud &amp; virtualization</h3><p>Proxmox VE, Ceph, KVM, VMware ESXi, Hyper-V, XenServer, OCI, AWS, GCP, Hetzner, Equinix.</p></article>
+          <article class="capability"><span class="capability-number">02 / 06</span><h3 data-en="Containers &amp; platform" data-pt="Containers e plataforma">Containers &amp; platform</h3><p>Kubernetes, Kubespray, Docker, Helm, Longhorn, Flannel, KubeVIP, Traefik, MinIO.</p></article>
+          <article class="capability"><span class="capability-number">03 / 06</span><h3 data-en="Automation &amp; delivery" data-pt="Automação e entrega">Automation &amp; delivery</h3><p>Ansible, AWX, Shell, Git, Jenkins, GitHub Actions, Rundeck, REST API integrations, CI/CD.</p></article>
+          <article class="capability"><span class="capability-number">04 / 06</span><h3 data-en="Observability" data-pt="Observabilidade">Observability</h3><p>Zabbix, Prometheus, Grafana, OpenSearch, Graylog, Elastic Stack, ElastiFlow, TimescaleDB.</p></article>
+          <article class="capability"><span class="capability-number">05 / 06</span><h3 data-en="Data platforms" data-pt="Plataformas de dados">Data platforms</h3><p>MySQL, PostgreSQL, TimescaleDB, Redis, Dragonfly, PgBouncer, replication, indexing, caching.</p></article>
+          <article class="capability"><span class="capability-number">06 / 06</span><h3 data-en="Networking &amp; security" data-pt="Redes e segurança">Networking &amp; security</h3><p>Cloudflare, Imperva, Nginx, FortiGate, pfSense, DNS, WAF, VPN, VLAN, LACP, routing, OWASP.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="contact-panel">
+          <p class="section-kicker" data-en="Let’s connect" data-pt="Vamos conversar">Let’s connect</p>
+          <h2 data-en="Building or modernizing critical infrastructure? Let’s talk." data-pt="Construindo ou modernizando infraestrutura crítica? Vamos conversar.">Building or modernizing critical infrastructure? Let’s talk.</h2>
+          <p data-en="I’m interested in senior cloud infrastructure, platform engineering, infrastructure SRE, and cloud or data-center architecture opportunities with meaningful scale and technical ownership." data-pt="Tenho interesse em oportunidades seniores de infraestrutura cloud, engenharia de plataforma, SRE de infraestrutura e arquitetura cloud ou de data center, com escala relevante e responsabilidade técnica.">I’m interested in senior cloud infrastructure, platform engineering, infrastructure SRE, and cloud or data-center architecture opportunities with meaningful scale and technical ownership.</p>
+          <div class="contact-links">
+            <a class="button primary" href="mailto:wildes.hn@gmail.com">wildes.hn@gmail.com</a>
+            <a class="button" href="https://www.linkedin.com/in/hwildes" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
+            <a class="button" href="https://github.com/whanada" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+            <a class="button" href="Wildes-Hanada-Cloud-Infrastructure-Platform-Engineer-2026.pdf" target="_blank" rel="noopener noreferrer"><span data-en="View résumé" data-pt="Ver currículo">View résumé</span> <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span>© <span id="year">2026</span> Wildes Hanada. <span data-en="Built for clarity, speed, and accessibility." data-pt="Construído com foco em clareza, velocidade e acessibilidade.">Built for clarity, speed, and accessibility.</span></span>
+      <div class="footer-links">
+        <a href="#top" data-en="Back to top" data-pt="Voltar ao topo">Back to top</a>
+        <a href="mailto:wildes.hn@gmail.com" data-en="Email" data-pt="E-mail">Email</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (() => {
+      const root = document.documentElement;
+      const header = document.getElementById('site-header');
+      const languageButtons = document.querySelectorAll('[data-language]');
+      const translatableElements = document.querySelectorAll('[data-en][data-pt]');
+      const ariaElements = document.querySelectorAll('[data-aria-en][data-aria-pt]');
+      const descriptions = {
+        en: 'Wildes Hanada is a senior cloud infrastructure and platform engineer specializing in globally distributed systems, Proxmox, Ceph, Kubernetes, automation, and observability.',
+        pt: 'Wildes Hanada é engenheiro sênior de infraestrutura cloud e plataforma, especializado em sistemas distribuídos, Proxmox, Ceph, Kubernetes, automação e observabilidade.'
+      };
+
+      function setLanguage(language) {
+        const selected = language === 'pt' ? 'pt' : 'en';
+        root.lang = selected === 'pt' ? 'pt-BR' : 'en';
+
+        translatableElements.forEach((element) => {
+          element.textContent = element.dataset[selected];
+        });
+
+        ariaElements.forEach((element) => {
+          element.setAttribute('aria-label', element.dataset[`aria${selected === 'en' ? 'En' : 'Pt'}`]);
+        });
+
+        languageButtons.forEach((button) => {
+          button.setAttribute('aria-pressed', String(button.dataset.language === selected));
+        });
+
+        document.querySelector('meta[name="description"]').setAttribute('content', descriptions[selected]);
+        document.title = selected === 'pt'
+          ? 'Wildes Hanada — Engenheiro de Infraestrutura Cloud e Plataforma'
+          : 'Wildes Hanada — Cloud Infrastructure & Platform Engineer';
+
+        try {
+          localStorage.setItem('preferred-language', selected);
+        } catch (_) {
+          // Local storage may be disabled; the language switch still works for this page view.
         }
+      }
+
+      languageButtons.forEach((button) => {
+        button.addEventListener('click', () => setLanguage(button.dataset.language));
       });
-    }, observerOptions);
 
-    // Observar todos os itens da experiência
-    document.querySelectorAll('.experience-item').forEach(item => {
-      observer.observe(item);
-    });
+      let preferredLanguage = 'en';
+      try {
+        preferredLanguage = localStorage.getItem('preferred-language') || 'en';
+      } catch (_) {
+        preferredLanguage = 'en';
+      }
+      setLanguage(preferredLanguage);
 
-    window.addEventListener('load', () => {
-      adjustMainPadding();
-      adjustHeaderShrink();
-    });
+      document.getElementById('year').textContent = new Date().getFullYear();
 
-    window.addEventListener('scroll', adjustHeaderShrink);
-    window.addEventListener('resize', adjustMainPadding);
+      function updateHeader() {
+        header.classList.toggle('scrolled', window.scrollY > 12);
+      }
+
+      updateHeader();
+      window.addEventListener('scroll', updateHeader, { passive: true });
+    })();
   </script>
 </body>
 </html>
