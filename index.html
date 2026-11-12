@@ -969,38 +969,7 @@
       }
 
       .case-grid,
-      .role-details {
-      grid-column: 1 / -1;
-      color: var(--muted);
-      font-size: 0.92rem;
-    }
-
-    .role-details summary {
-      cursor: pointer;
-      color: var(--accent-strong);
-      font-weight: 700;
-      padding: 0.5rem 0;
-    }
-
-    .role-details summary:focus-visible {
-      outline: 2px solid var(--accent-strong);
-      outline-offset: 4px;
-      border-radius: 4px;
-    }
-
-    .role-details ul {
-      margin: 1rem 0 0;
-      padding-left: 1.3rem;
-      columns: 2 24rem;
-      column-gap: 2.5rem;
-    }
-
-    .role-details li {
-      margin-bottom: 0.8rem;
-      break-inside: avoid;
-    }
-
-    .capability-grid {
+      .capability-grid {
         grid-template-columns: repeat(2, 1fr);
       }
 
@@ -1011,7 +980,50 @@
 
     @media (max-width: 700px) {
       .container {
-        width: min(calc(100% - 1.25rem), var(--max-width));
+        width: min(calc(100% - 2rem), var(--max-width));
+      }
+
+      .hero-grid > *,
+      .case-grid > *,
+      .capability-grid > *,
+      .role > * {
+        min-width: 0;
+      }
+
+      .hero-grid,
+      .section-heading,
+      .contact-panel {
+        text-align: center;
+      }
+
+      .hero-copy,
+      .section-intro,
+      .contact-panel h2,
+      .contact-panel p {
+        margin-inline: auto;
+      }
+
+      .availability {
+        width: min(100%, 360px);
+        justify-self: center;
+      }
+
+      .status,
+      .contact-links {
+        justify-content: center;
+      }
+
+      .metric {
+        text-align: center;
+      }
+
+      .contact-links .button {
+        max-width: 100%;
+        overflow-wrap: anywhere;
+      }
+
+      .role-details {
+        order: 4;
       }
 
       .site-header .button {
@@ -1033,6 +1045,7 @@
       .eyebrow {
         max-width: 100%;
         flex-wrap: wrap;
+        justify-content: center;
         line-height: 1.65;
       }
 
@@ -1044,7 +1057,9 @@
       .hero-actions {
         display: grid;
         grid-template-columns: 1fr;
+        width: 100%;
         max-width: 23rem;
+        margin-inline: auto;
       }
 
       .hero-actions .button {
@@ -1069,38 +1084,7 @@
       }
 
       .case-grid,
-      .role-details {
-      grid-column: 1 / -1;
-      color: var(--muted);
-      font-size: 0.92rem;
-    }
-
-    .role-details summary {
-      cursor: pointer;
-      color: var(--accent-strong);
-      font-weight: 700;
-      padding: 0.5rem 0;
-    }
-
-    .role-details summary:focus-visible {
-      outline: 2px solid var(--accent-strong);
-      outline-offset: 4px;
-      border-radius: 4px;
-    }
-
-    .role-details ul {
-      margin: 1rem 0 0;
-      padding-left: 1.3rem;
-      columns: 2 24rem;
-      column-gap: 2.5rem;
-    }
-
-    .role-details li {
-      margin-bottom: 0.8rem;
-      break-inside: avoid;
-    }
-
-    .capability-grid {
+      .capability-grid {
         grid-template-columns: 1fr;
       }
 
@@ -1127,8 +1111,14 @@
       }
 
       .footer-inner {
-        align-items: flex-start;
+        align-items: center;
+        text-align: center;
         flex-direction: column;
+      }
+
+      .footer-links {
+        justify-content: center;
+        flex-wrap: wrap;
       }
     }
 
