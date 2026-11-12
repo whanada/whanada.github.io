@@ -759,6 +759,37 @@
       font-size: 0.92rem;
     }
 
+    .role-details {
+      grid-column: 1 / -1;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .role-details summary {
+      cursor: pointer;
+      color: var(--accent-strong);
+      font-weight: 700;
+      padding: 0.5rem 0;
+    }
+
+    .role-details summary:focus-visible {
+      outline: 2px solid var(--accent-strong);
+      outline-offset: 4px;
+      border-radius: 4px;
+    }
+
+    .role-details ul {
+      margin: 1rem 0 0;
+      padding-left: 1.3rem;
+      columns: 2 24rem;
+      column-gap: 2.5rem;
+    }
+
+    .role-details li {
+      margin-bottom: 0.8rem;
+      break-inside: avoid;
+    }
+
     .capability-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -932,7 +963,38 @@
       }
 
       .case-grid,
-      .capability-grid {
+      .role-details {
+      grid-column: 1 / -1;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .role-details summary {
+      cursor: pointer;
+      color: var(--accent-strong);
+      font-weight: 700;
+      padding: 0.5rem 0;
+    }
+
+    .role-details summary:focus-visible {
+      outline: 2px solid var(--accent-strong);
+      outline-offset: 4px;
+      border-radius: 4px;
+    }
+
+    .role-details ul {
+      margin: 1rem 0 0;
+      padding-left: 1.3rem;
+      columns: 2 24rem;
+      column-gap: 2.5rem;
+    }
+
+    .role-details li {
+      margin-bottom: 0.8rem;
+      break-inside: avoid;
+    }
+
+    .capability-grid {
         grid-template-columns: repeat(2, 1fr);
       }
 
@@ -1001,7 +1063,38 @@
       }
 
       .case-grid,
-      .capability-grid {
+      .role-details {
+      grid-column: 1 / -1;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .role-details summary {
+      cursor: pointer;
+      color: var(--accent-strong);
+      font-weight: 700;
+      padding: 0.5rem 0;
+    }
+
+    .role-details summary:focus-visible {
+      outline: 2px solid var(--accent-strong);
+      outline-offset: 4px;
+      border-radius: 4px;
+    }
+
+    .role-details ul {
+      margin: 1rem 0 0;
+      padding-left: 1.3rem;
+      columns: 2 24rem;
+      column-gap: 2.5rem;
+    }
+
+    .role-details li {
+      margin-bottom: 0.8rem;
+      break-inside: avoid;
+    }
+
+    .capability-grid {
         grid-template-columns: 1fr;
       }
 
@@ -1086,7 +1179,7 @@
           <svg class="theme-icon-moon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.2 15.2A8.6 8.6 0 0 1 8.8 3.8 8.6 8.6 0 1 0 20.2 15.2Z"/></svg>
           <span class="sr-only" data-theme-label>Use light theme</span>
         </button>
-        <a class="button" href="https://drive.google.com/file/d/1bcWW8rTx83DM23Zsl9TMvRWMr3_Kir8P/view?usp=drive_link" data-resume-link target="_blank" rel="noopener noreferrer">
+        <a class="button" href="https://drive.google.com/file/d/1VYpC6d6ZHfY64PyYC3dYBVYS_9TbwE9Y/view?usp=sharing" data-resume-link target="_blank" rel="noopener noreferrer">
           <span data-en="Résumé" data-pt="Currículo">Résumé</span>
           <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 5h5v5M19 5l-9 9M19 13v6H5V5h6"/></svg>
         </a>
@@ -1198,33 +1291,158 @@
 
         <div class="timeline">
           <article class="role">
-            <div class="role-period">Jan 2026—<span data-en="Present" data-pt="Atual">Present</span><br><span class="role-location" data-en="Global operations" data-pt="Operações globais">Global operations</span></div>
+            <div class="role-period"><span data-en="Jan 2026—Sep 2026" data-pt="Jan 2026—Set 2026">Jan 2026—Sep 2026</span><br><span class="role-location" data-en="Global operations" data-pt="Operações globais">Global operations</span></div>
             <div class="role-main"><h3 data-en="Cloud Operations Engineer" data-pt="Engenheiro de Operações Cloud">Cloud Operations Engineer</h3><p class="role-company">EdgeUno · AS7195</p></div>
-            <p class="role-description" data-en="Infrastructure modernization, Proxmox and Ceph lifecycle operations, storage migrations, capacity planning, automation, telemetry, and cross-functional delivery across 50+ data centers." data-pt="Modernização de infraestrutura, ciclo de vida de Proxmox e Ceph, migrações de storage, planejamento de capacidade, automação, telemetria e entregas multidisciplinares em mais de 50 data centers.">Infrastructure modernization, Proxmox and Ceph lifecycle operations, storage migrations, capacity planning, automation, telemetry, and cross-functional delivery across 50+ data centers.</p>
+            <p class="role-description" data-en="Infrastructure modernization, Proxmox and Ceph lifecycle operations, storage migrations, capacity planning, automation, telemetry, and cross-functional delivery across 27 data centers in 13 countries." data-pt="Modernização de infraestrutura, ciclo de vida de Proxmox e Ceph, migrações de storage, planejamento de capacidade, automação, telemetria e entregas multidisciplinares em 27 data centers em 13 países.">Infrastructure modernization, Proxmox and Ceph lifecycle operations, storage migrations, capacity planning, automation, telemetry, and cross-functional delivery across 27 data centers in 13 countries.</p>
+
+            <details class="role-details">
+              <summary><span data-en="View role details" data-pt="Ver detalhes da experiência">View role details</span></summary>
+              <ul>
+                <li data-en="Supported cloud infrastructure and platform operations across 27 data centers in 13 countries, covering compute, virtualization, storage, networking, backup, and observability." data-pt="Suporte a operações de infraestrutura cloud e plataforma distribuídas globalmente em 27 data centers em 13 países, em ambientes multi-data center, abrangendo compute, virtualização, storage, redes, backup e observabilidade.">Supported cloud infrastructure and platform operations across 27 data centers in 13 countries, covering compute, virtualization, storage, networking, backup, and observability.</li>
+                <li data-en="Collaborated with global teams, with 100% of day-to-day communication conducted in English." data-pt="Colaboração com times globais, com 100% da comunicação cotidiana realizada em inglês.">Collaborated with global teams, with 100% of day-to-day communication conducted in English.</li>
+                <li data-en="Participated in on-call rotations, providing operational and incident support outside regular business hours." data-pt="Participação em escala de on-call / sobreaviso para suporte a operações e incidentes fora do horário comercial.">Participated in on-call rotations, providing operational and incident support outside regular business hours.</li>
+                <li data-en="Developed an automated infrastructure inventory data lake, consolidating asset and capacity data to enable capacity-planning metrics and provide C-level visibility for infrastructure cost analysis and financial planning." data-pt="Desenvolvimento de um data lake automatizado de inventário de infraestrutura, consolidando dados de ativos e capacidade para viabilizar métricas de capacity planning e fornecer visibilidade em nível executivo para análise de custos de infraestrutura e planejamento financeiro.">Developed an automated infrastructure inventory data lake, consolidating asset and capacity data to enable capacity-planning metrics and provide C-level visibility for infrastructure cost analysis and financial planning.</li>
+                <li data-en="Led data center modernization projects with Proxmox VE and Ceph, including cluster builds/upgrades, VM and storage migrations, capacity planning, hardware lifecycle, and production readiness." data-pt="Liderança de projetos de modernização de data centers com Proxmox VE e Ceph, incluindo construção/upgrades de clusters, migrações de VMs e storage, capacity planning, ciclo de vida de hardware e preparação para produção.">Led data center modernization projects with Proxmox VE and Ceph, including cluster builds/upgrades, VM and storage migrations, capacity planning, hardware lifecycle, and production readiness.</li>
+                <li data-en="Designed Infrastructure as Code and automation using Ansible, AWX, GitLab CI/CD, Shell, APIs, and SQL, with pipelines incorporating dry-run, canary, approval, validation, security scanning, and rollback." data-pt="Desenho de Infrastructure as Code e automação utilizando Ansible, AWX, GitLab CI/CD, Shell, APIs e SQL, com pipelines incorporando dry-run, canary, aprovação, validação, security scanning e rollback.">Designed Infrastructure as Code and automation using Ansible, AWX, GitLab CI/CD, Shell, APIs, and SQL, with pipelines incorporating dry-run, canary, approval, validation, security scanning, and rollback.</li>
+                <li data-en="Built observability for critical operations using Zabbix, Grafana, Prometheus, Blackbox Exporter, Telegraf, Promtail, and cAdvisor, including service discovery, dashboards, alerting, and real-time telemetry." data-pt="Construção de observabilidade para operações críticas usando Zabbix, Grafana, Prometheus, Blackbox Exporter, Telegraf, Promtail e cAdvisor, incluindo service discovery, dashboards, alertas e telemetria em tempo real.">Built observability for critical operations using Zabbix, Grafana, Prometheus, Blackbox Exporter, Telegraf, Promtail, and cAdvisor, including service discovery, dashboards, alerting, and real-time telemetry.</li>
+                <li data-en="Managed multiple S3 servers and distributed data ingestion across multiple locations." data-pt="Administração de múltiplos servidores S3 e ingestão distribuída de dados entre múltiplas localidades.">Managed multiple S3 servers and distributed data ingestion across multiple locations.</li>
+                <li data-en="Deployed and supported bare-metal and virtual infrastructure, including Proxmox clusters, firmware, IPv4/IPv6, VLANs, QinQ, LACP, MTU, backup, and monitoring." data-pt="Implantação e suporte de infraestrutura bare metal e virtual, incluindo clusters Proxmox, firmware, IPv4/IPv6, VLANs, QinQ, LACP, MTU, backup e monitoramento.">Deployed and supported bare-metal and virtual infrastructure, including Proxmox clusters, firmware, IPv4/IPv6, VLANs, QinQ, LACP, MTU, backup, and monitoring.</li>
+                <li data-en="Tuned MySQL instances, deployed MySQL Exporter, optimized indexing through General Query Log analysis, and implemented database auditing." data-pt="Tuning de instâncias MySQL, implantação do MySQL Exporter, otimização de indexação por análise do General Query Log e implementação de auditoria de banco de dados.">Tuned MySQL instances, deployed MySQL Exporter, optimized indexing through General Query Log analysis, and implemented database auditing.</li>
+                <li data-en="Developed AI-assisted troubleshooting agents using monitoring, telemetry, hardware, and operational data for Cloud, NOC, and Network teams." data-pt="Desenvolvimento de agentes de troubleshooting assistidos por IA utilizando dados de monitoramento, telemetria, hardware e operações para os times de Cloud, NOC e Network.">Developed AI-assisted troubleshooting agents using monitoring, telemetry, hardware, and operational data for Cloud, NOC, and Network teams.</li>
+                <li data-en="Troubleshot complex production issues across Linux, Proxmox, Ceph, NGINX, storage, networking, DNS, databases, backups, and distributed services." data-pt="Troubleshooting de problemas complexos de produção em Linux, Proxmox, Ceph, NGINX, storage, redes, DNS, bancos de dados, backups e serviços distribuídos.">Troubleshot complex production issues across Linux, Proxmox, Ceph, NGINX, storage, networking, DNS, databases, backups, and distributed services.</li>
+                <li data-en="Created post-mortems for production incidents, documenting root causes and preventive actions." data-pt="Criação de post-mortems para incidentes de produção, documentando causas raiz e ações preventivas.">Created post-mortems for production incidents, documenting root causes and preventive actions.</li>
+                <li data-en="Mentored junior engineers and collaborated with Network, Data Center, Security, IT, NOC, Customer Success, and Engineering teams globally." data-pt="Mentoria de engenheiros juniores e colaboração global com os times de Network, Data Center, Security, IT, NOC, Customer Success e Engineering.">Mentored junior engineers and collaborated with Network, Data Center, Security, IT, NOC, Customer Success, and Engineering teams globally.</li>
+              </ul>
+            </details>
           </article>
 
           <article class="role">
             <div class="role-period">Dec 2024—Dec 2025<br><span class="role-location">Goiânia, Brazil</span></div>
             <div class="role-main"><h3 data-en="DevOps Engineer" data-pt="Engenheiro DevOps">DevOps Engineer</h3><p class="role-company">Open Data Center · AS262415</p></div>
             <p class="role-description" data-en="Modernized observability, Kubernetes, databases, DNS, security, and CI/CD across internal infrastructure and customer environments in Brazil and the United States." data-pt="Modernizou observabilidade, Kubernetes, bancos de dados, DNS, segurança e CI/CD em infraestrutura interna e ambientes de clientes no Brasil e nos Estados Unidos.">Modernized observability, Kubernetes, databases, DNS, security, and CI/CD across internal infrastructure and customer environments in Brazil and the United States.</p>
+
+            <details class="role-details">
+              <summary><span data-en="View role details" data-pt="Ver detalhes da experiência">View role details</span></summary>
+              <ul>
+                <li data-en="Increased observability maturity across four data centers (three in Brazil, one in the USA) and the NOC." data-pt="Evolução da maturidade de observabilidade em quatro data centers (três no Brasil e um nos EUA) e no NOC.">Increased observability maturity across four data centers (three in Brazil, one in the USA) and the NOC.</li>
+                <li data-en="Implemented monitoring, logging, and network flow collection stacks from scratch (Zabbix, TimescaleDB, Graylog, OpenSearch, ElastiFlow)." data-pt="Implementação do zero de stacks de monitoramento, logging e coleta de network flow (Zabbix, TimescaleDB, Graylog, OpenSearch, ElastiFlow).">Implemented monitoring, logging, and network flow collection stacks from scratch (Zabbix, TimescaleDB, Graylog, OpenSearch, ElastiFlow).</li>
+                <li data-en="Developed automated reports and dashboards based on SQL queries." data-pt="Desenvolvimento de relatórios automatizados e dashboards baseados em consultas SQL.">Developed automated reports and dashboards based on SQL queries.</li>
+                <li data-en="Supported critical operations environments." data-pt="Suporte a ambientes de operações críticas.">Supported critical operations environments.</li>
+                <li data-en="Implemented and administered Kubernetes - Kubespray + Ansible for automated cluster provisioning (~20mins) and also for new nodes automated provisioning - Flannel CNI, KubeVIP for load balancer, Longhorn.io as distributed block storage system." data-pt="Implementação e administração de Kubernetes com Kubespray + Ansible para provisionamento automatizado de clusters (~20 min) e também provisionamento automatizado de novos nodes - Flannel CNI, KubeVIP para load balancer e Longhorn.io como sistema de block storage distribuído.">Implemented and administered Kubernetes - Kubespray + Ansible for automated cluster provisioning (~20mins) and also for new nodes automated provisioning - Flannel CNI, KubeVIP for load balancer, Longhorn.io as distributed block storage system.</li>
+                <li data-en="Maintained Kubernetes deployments for Laravel, Dragonfly, Next.js, Redis, socket.io, and MySQL (master-slave), Vaultwarden, Metabase, SonarQube, MinIO, CloudConnect, PostgreSQL (Pub/Sub), Apache SkyWalking." data-pt="Manutenção de deployments Kubernetes para Laravel, Dragonfly, Next.js, Redis, socket.io e MySQL (master-slave), Vaultwarden, Metabase, SonarQube, MinIO, CloudConnect, PostgreSQL (Pub/Sub) e Apache SkyWalking.">Maintained Kubernetes deployments for Laravel, Dragonfly, Next.js, Redis, socket.io, and MySQL (master-slave), Vaultwarden, Metabase, SonarQube, MinIO, CloudConnect, PostgreSQL (Pub/Sub), Apache SkyWalking.</li>
+                <li data-en="Maintained 8 Kubernetes clusters of varying sizes, internally." data-pt="Manutenção de 8 clusters Kubernetes de diferentes tamanhos, internamente.">Maintained 8 Kubernetes clusters of varying sizes, internally.</li>
+                <li data-en="Maintained six Kubernetes clusters of varying sizes, supporting over 200 deployments across customer environments." data-pt="Manutenção de seis clusters Kubernetes de diferentes tamanhos, suportando mais de 200 deployments em ambientes de clientes.">Maintained six Kubernetes clusters of varying sizes, supporting over 200 deployments across customer environments.</li>
+                <li data-en="Maintained Docker and Docker Swarm deployments with Traefik and a Layer 4 and Layer 7 router." data-pt="Manutenção de deployments Docker e Docker Swarm com Traefik e roteamento Layer 4 e Layer 7.">Maintained Docker and Docker Swarm deployments with Traefik and a Layer 4 and Layer 7 router.</li>
+                <li data-en="Implemented and managed SQL and NoSQL databases and replication." data-pt="Implementação e administração de bancos SQL e NoSQL e replicação.">Implemented and managed SQL and NoSQL databases and replication.</li>
+                <li data-en="Improved web system page load speeds by over 80% through database index optimization and caching implementation." data-pt="Melhoria superior a 80% no tempo de carregamento de sistemas web por meio de otimização de índices de banco de dados e implementação de caching.">Improved web system page load speeds by over 80% through database index optimization and caching implementation.</li>
+                <li data-en="Implemented caching for websites, static assets, and APIs, enabling content to be efficiently distributed and delivered through Cloudflare’s CDN." data-pt="Implementação de caching para websites, ativos estáticos e APIs, permitindo distribuição e entrega eficiente de conteúdo por meio da CDN da Cloudflare.">Implemented caching for websites, static assets, and APIs, enabling content to be efficiently distributed and delivered through Cloudflare’s CDN.</li>
+                <li data-en="Created Cloudflare environment from scratch." data-pt="Criação do ambiente Cloudflare do zero.">Created Cloudflare environment from scratch.</li>
+                <li data-en="Implemented and administered WAF (based on OWASP Top 10), Nginx, and Traefik." data-pt="Implementação e administração de WAF (baseado no OWASP Top 10), Nginx e Traefik.">Implemented and administered WAF (based on OWASP Top 10), Nginx, and Traefik.</li>
+                <li data-en="Managed and migrated over 30 authoritative and recursive DNS domains from on-premises to Cloudflare." data-pt="Gestão e migração de mais de 30 domínios DNS autoritativos e recursivos de on-premises para Cloudflare.">Managed and migrated over 30 authoritative and recursive DNS domains from on-premises to Cloudflare.</li>
+                <li data-en="Automated REST APIs using Ansible." data-pt="Automação de APIs REST utilizando Ansible.">Automated REST APIs using Ansible.</li>
+                <li data-en="Developed CI/CD pipelines including GitHub Actions runners, and performed deployment debugging." data-pt="Desenvolvimento de pipelines CI/CD, incluindo runners do GitHub Actions, e troubleshooting de deployments.">Developed CI/CD pipelines including GitHub Actions runners, and performed deployment debugging.</li>
+                <li data-en="Proxmox VE" data-pt="Proxmox VE">Proxmox VE</li>
+                <li data-en="VMware ESXi and vCenter" data-pt="VMware ESXi e vCenter">VMware ESXi and vCenter</li>
+                <li data-en="Hyper-V" data-pt="Hyper-V">Hyper-V</li>
+                <li data-en="KVM" data-pt="KVM">KVM</li>
+              </ul>
+            </details>
           </article>
 
           <article class="role">
             <div class="role-period">Aug 2021—Nov 2024<br><span class="role-location">Uberlândia, Brazil</span></div>
             <div class="role-main"><h3 data-en="DevOps Engineer · Technical Lead" data-pt="Engenheiro DevOps · Líder Técnico">DevOps Engineer · Technical Lead</h3><p class="role-company">OpenK Tecnologia</p></div>
             <p class="role-description" data-en="Led Infrastructure, DevOps, and Platform Operations teams for high-scale commerce integrations, multi-cloud services, CI/CD, observability, security, vendor management, and FinOps." data-pt="Liderou equipes de Infraestrutura, DevOps e Operações de Plataforma para integrações de comércio em larga escala, serviços multi-cloud, CI/CD, observabilidade, segurança, fornecedores e FinOps.">Led Infrastructure, DevOps, and Platform Operations teams for high-scale commerce integrations, multi-cloud services, CI/CD, observability, security, vendor management, and FinOps.</p>
+
+            <details class="role-details">
+              <summary><span data-en="View role details" data-pt="Ver detalhes da experiência">View role details</span></summary>
+              <ul>
+                <li data-en="Served as Technical Lead for IT Infrastructure, DevOps, and Level 2 Support teams." data-pt="Atuação como Líder Técnico dos times de Infraestrutura de TI, DevOps e Suporte Nível 2.">Served as Technical Lead for IT Infrastructure, DevOps, and Level 2 Support teams.</li>
+                <li data-en="Led data and service migrations to cloud environments and new architectures." data-pt="Liderança de migrações de dados e serviços para ambientes cloud e novas arquiteturas.">Led data and service migrations to cloud environments and new architectures.</li>
+                <li data-en="Managed CI/CD with Jenkins and Rundeck, averaging 100 deployments/day." data-pt="Gestão de CI/CD com Jenkins e Rundeck, com média de 100 deployments/dia.">Managed CI/CD with Jenkins and Rundeck, averaging 100 deployments/day.</li>
+                <li data-en="Managed distributed infrastructure across Equinix, Hetzner, GCP, AWS, and Oracle Cloud." data-pt="Gestão de infraestrutura distribuída em Equinix, Hetzner, GCP, AWS e Oracle Cloud.">Managed distributed infrastructure across Equinix, Hetzner, GCP, AWS, and Oracle Cloud.</li>
+                <li data-en="Managed 1,000+ horizontally scaled containers across multiple clusters, 400+ Nginx/Traefik hosts, and 500+ MySQL databases." data-pt="Gestão de mais de 1.000 containers horizontalmente escalados em múltiplos clusters, mais de 400 hosts Nginx/Traefik e mais de 500 bancos MySQL.">Managed 1,000+ horizontally scaled containers across multiple clusters, 400+ Nginx/Traefik hosts, and 500+ MySQL databases.</li>
+                <li data-en="Managed on-premises KVM hypervisor infrastructure, supporting virtual machine provisioning, configuration, maintenance, and troubleshooting." data-pt="Gestão de infraestrutura de hypervisor KVM on-premises, suportando provisionamento, configuração, manutenção e troubleshooting de máquinas virtuais.">Managed on-premises KVM hypervisor infrastructure, supporting virtual machine provisioning, configuration, maintenance, and troubleshooting.</li>
+                <li data-en="Operated platforms processing 1M+ API requests/min across B2B and marketplace integrations." data-pt="Operação de plataformas processando mais de 1 milhão de requisições de API por minuto em integrações B2B e marketplaces.">Operated platforms processing 1M+ API requests/min across B2B and marketplace integrations.</li>
+                <li data-en="Deployed Varnish HTTP caching and designed a CDN for static asset distribution." data-pt="Implantação de caching HTTP com Varnish e desenho de CDN para distribuição de ativos estáticos.">Deployed Varnish HTTP caching and designed a CDN for static asset distribution.</li>
+                <li data-en="Automated operations with Shell, Python, and webhooks." data-pt="Automação de operações com Shell, Python e webhooks.">Automated operations with Shell, Python, and webhooks.</li>
+                <li data-en="Deployed Python and Java applications using containerized JBoss/WildFly and Tomcat." data-pt="Deploy de aplicações Python e Java utilizando JBoss/WildFly e Tomcat containerizados.">Deployed Python and Java applications using containerized JBoss/WildFly and Tomcat.</li>
+                <li data-en="Implemented Apache Solr-based applications to index database data, offload search queries, and reduce database workload." data-pt="Implementação de aplicações baseadas em Apache Solr para indexar dados de bancos, descarregar consultas de busca e reduzir a carga sobre os bancos de dados.">Implemented Apache Solr-based applications to index database data, offload search queries, and reduce database workload.</li>
+                <li data-en="Managed sourcing and contract negotiations with cloud/colocation providers, including Oracle, Equinix, and Hetzner." data-pt="Gestão de sourcing e negociações contratuais com provedores de cloud/colocation, incluindo Oracle, Equinix e Hetzner.">Managed sourcing and contract negotiations with cloud/colocation providers, including Oracle, Equinix, and Hetzner.</li>
+                <li data-en="Applied FinOps practices to monitor and optimize public cloud costs." data-pt="Aplicação de práticas de FinOps para monitorar e otimizar custos de cloud pública.">Applied FinOps practices to monitor and optimize public cloud costs.</li>
+                <li data-en="Implemented Zabbix, Prometheus, and Grafana for monitoring, alerting, and root cause analysis." data-pt="Implementação de Zabbix, Prometheus e Grafana para monitoramento, alertas e análise de causa raiz.">Implemented Zabbix, Prometheus, and Grafana for monitoring, alerting, and root cause analysis.</li>
+                <li data-en="Implemented WAF (based on OWASP Top 10) and SonarQube for application security and code quality." data-pt="Implementação de WAF (baseado no OWASP Top 10) e SonarQube para segurança de aplicações e qualidade de código.">Implemented WAF (based on OWASP Top 10) and SonarQube for application security and code quality.</li>
+                <li data-en="Managed and deployed Mattel Brazil’s B2B website/backend, including Imperva WAF and caching." data-pt="Gestão e deploy do website/backend B2B da Mattel Brasil, incluindo Imperva WAF e caching.">Managed and deployed Mattel Brazil’s B2B website/backend, including Imperva WAF and caching.</li>
+                <li data-en="Managed hundreds of jobs/APIs integrating orders, inventory, pricing, and tracking with Amazon, Shopee, VTEX, Anymarket, Mercado Livre, B2W, Magalu, Olist, and Bling." data-pt="Gestão de centenas de jobs/APIs integrando pedidos, estoque, preços e tracking com Amazon, Shopee, VTEX, Anymarket, Mercado Livre, B2W, Magalu, Olist e Bling.">Managed hundreds of jobs/APIs integrating orders, inventory, pricing, and tracking with Amazon, Shopee, VTEX, Anymarket, Mercado Livre, B2W, Magalu, Olist, and Bling.</li>
+                <li data-en="Managed Facebook and Google Shopping XML feeds for near-real-time product updates." data-pt="Gestão de feeds XML para Facebook e Google Shopping com atualizações de produtos quase em tempo real.">Managed Facebook and Google Shopping XML feeds for near-real-time product updates.</li>
+                <li data-en="Automated sitemap and robots.txt generation to improve SEO." data-pt="Automação da geração de sitemap e robots.txt para melhorar SEO.">Automated sitemap and robots.txt generation to improve SEO.</li>
+              </ul>
+            </details>
           </article>
 
           <article class="role">
             <div class="role-period">Aug 2015—Jul 2021<br><span class="role-location">Anápolis, Brazil</span></div>
             <div class="role-main"><h3 data-en="Systems &amp; Network Administrator" data-pt="Administrador de Sistemas e Redes">Systems &amp; Network Administrator</h3><p class="role-company">Grupo Lírios</p></div>
             <p class="role-description" data-en="Owned infrastructure supporting headquarters, warehouses, and 12 branches across four states, including data-center systems, Fibre Channel SAN, virtualization, networking, security, VoIP, and disaster recovery." data-pt="Responsável pela infraestrutura da matriz, depósitos e 12 filiais em quatro estados, incluindo data center, SAN Fibre Channel, virtualização, redes, segurança, VoIP e recuperação de desastres.">Owned infrastructure supporting headquarters, warehouses, and 12 branches across four states, including data-center systems, Fibre Channel SAN, virtualization, networking, security, VoIP, and disaster recovery.</p>
+
+            <details class="role-details">
+              <summary><span data-en="View role details" data-pt="Ver detalhes da experiência">View role details</span></summary>
+              <ul>
+                <li data-en="Managed headquarters infrastructure across 12 branches and warehouses in multiple Brazilian states, including servers, virtualization, workstations, CCTV, NVRs, and access control." data-pt="Gestão da infraestrutura da matriz em 12 filiais e depósitos em vários estados brasileiros, incluindo servidores, virtualização, estações de trabalho, CCTV, NVRs e controle de acesso.">Managed headquarters infrastructure across 12 branches and warehouses in multiple Brazilian states, including servers, virtualization, workstations, CCTV, NVRs, and access control.</li>
+                <li data-en="Designed and deployed LAN/WAN for branches and construction sites, including WLAN, VoIP, structured cabling, site-to-site VPNs, surveillance, and end-user environments." data-pt="Projeto e implantação de LAN/WAN para filiais e canteiros de obras, incluindo WLAN, VoIP, cabeamento estruturado, VPNs site-to-site, vigilância e ambientes de usuários finais.">Designed and deployed LAN/WAN for branches and construction sites, including WLAN, VoIP, structured cabling, site-to-site VPNs, surveillance, and end-user environments.</li>
+                <li data-en="Designed and implemented NVR, WLAN, and VoIP projects across headquarters, branches, warehouses, and construction sites." data-pt="Projeto e implementação de NVR, WLAN e VoIP na matriz, filiais, depósitos e canteiros de obras.">Designed and implemented NVR, WLAN, and VoIP projects across headquarters, branches, warehouses, and construction sites.</li>
+                <li data-en="Deployed ERP TOTVS RM in a 3-tier architecture with dedicated application, SmartClient, and job servers; administered TOTVS License Server and RM Portal infrastructure." data-pt="Deploy do ERP TOTVS RM em arquitetura de 3 camadas com servidores dedicados de aplicação, SmartClient e jobs; administração do TOTVS License Server e da infraestrutura do RM Portal.">Deployed ERP TOTVS RM in a 3-tier architecture with dedicated application, SmartClient, and job servers; administered TOTVS License Server and RM Portal infrastructure.</li>
+                <li data-en="Deployed and administered TOTVS Fluig, including WildFly, Redis, and Apache Solr." data-pt="Deploy e administração do TOTVS Fluig, incluindo WildFly, Redis e Apache Solr.">Deployed and administered TOTVS Fluig, including WildFly, Redis, and Apache Solr.</li>
+                <li data-en="Implemented SAN, VLANs, WLAN, DMZ, SFP uplinks, LACP, VPNs, VoIP, HA pfSense, Active Directory, GPOs, DNS, WSUS, Terminal Services, file and print services." data-pt="Implementação de SAN, VLANs, WLAN, DMZ, uplinks SFP, LACP, VPNs, VoIP, pfSense em HA, Active Directory, GPOs, DNS, WSUS, Terminal Services e serviços de arquivos e impressão.">Implemented SAN, VLANs, WLAN, DMZ, SFP uplinks, LACP, VPNs, VoIP, HA pfSense, Active Directory, GPOs, DNS, WSUS, Terminal Services, file and print services.</li>
+                <li data-en="Administered Zimbra and implemented monitoring and alerting with Zabbix and Grafana." data-pt="Administração de Zimbra e implementação de monitoramento e alertas com Zabbix e Grafana.">Administered Zimbra and implemented monitoring and alerting with Zabbix and Grafana.</li>
+                <li data-en="Created HA server infrastructure using Dell PowerEdge, Hyper-V Failover Clustering, 8 Gbps Fibre Channel SAN, HBAs, and Brocade 300 switches; also supported XenServer." data-pt="Criação de infraestrutura de servidores em HA utilizando Dell PowerEdge, Hyper-V Failover Clustering, SAN Fibre Channel de 8 Gbps, HBAs e switches Brocade 300; também suporte a XenServer.">Created HA server infrastructure using Dell PowerEdge, Hyper-V Failover Clustering, 8 Gbps Fibre Channel SAN, HBAs, and Brocade 300 switches; also supported XenServer.</li>
+                <li data-en="Deployed Quest Rapid Recovery and developed backup/DR strategies covering full, incremental, and System State backups." data-pt="Deploy do Quest Rapid Recovery e desenvolvimento de estratégias de backup/DR cobrindo backups full, incremental e System State.">Deployed Quest Rapid Recovery and developed backup/DR strategies covering full, incremental, and System State backups.</li>
+                <li data-en="Designed an off-premises DR solution with site replication for business continuity." data-pt="Desenho de solução de DR off-premises com replicação de site para continuidade de negócios.">Designed an off-premises DR solution with site replication for business continuity.</li>
+                <li data-en="Automated data center A/C rotation and implemented temperature and smoke monitoring." data-pt="Automação do rodízio do ar-condicionado do data center e implementação de monitoramento de temperatura e fumaça.">Automated data center A/C rotation and implemented temperature and smoke monitoring.</li>
+                <li data-en="Designed dual 10 kVA UPS systems with redundant power lines and monitored battery banks, providing up to 6 hours of backup power; managed preventive maintenance." data-pt="Projeto de dois sistemas UPS de 10 kVA com linhas elétricas redundantes e monitoramento de bancos de baterias, fornecendo até 6 horas de autonomia; gestão de manutenção preventiva.">Designed dual 10 kVA UPS systems with redundant power lines and monitored battery banks, providing up to 6 hours of backup power; managed preventive maintenance.</li>
+                <li data-en="Automated infrastructure operations through scripting." data-pt="Automação de operações de infraestrutura por meio de scripting.">Automated infrastructure operations through scripting.</li>
+                <li data-en="Managed procurement, ISP/vendor contracts, Dell ProSupport warranties, Microsoft/Lenovo agreements, and infrastructure lifecycle." data-pt="Gestão de compras, contratos com ISPs/fornecedores, garantias Dell ProSupport, contratos Microsoft/Lenovo e ciclo de vida da infraestrutura.">Managed procurement, ISP/vendor contracts, Dell ProSupport warranties, Microsoft/Lenovo agreements, and infrastructure lifecycle.</li>
+                <li data-en="Participated in the organization’s ISO 9001 Quality Management System certification process." data-pt="Participação no processo de certificação do Sistema de Gestão da Qualidade ISO 9001 da organização.">Participated in the organization’s ISO 9001 Quality Management System certification process.</li>
+              </ul>
+            </details>
+          </article>
+
+          <article class="role">
+            <div class="role-period">Mar 2014—Jul 2015<br><span class="role-location" data-en="Brazil" data-pt="Brasil">Brazil</span></div>
+            <div class="role-main"><h3 data-en="Systems &amp; Network Administrator" data-pt="Administrador de Sistemas e Redes">Systems &amp; Network Administrator</h3><p class="role-company">CDA Alimentos</p></div>
+            <p class="role-description" data-en="Managed enterprise infrastructure across headquarters and seven branches in seven states, supporting secure connectivity, core business systems, and operational continuity." data-pt="Gestão de infraestrutura corporativa na matriz e em sete filiais em sete estados, garantindo conectividade segura, sistemas de negócio e continuidade operacional.">Managed enterprise infrastructure across headquarters and seven branches in seven states, supporting secure connectivity, core business systems, and operational continuity.</p>
+
+            <details class="role-details">
+              <summary><span data-en="View role details" data-pt="Ver detalhes da experiência">View role details</span></summary>
+              <ul>
+                <li data-en="Managed enterprise infrastructure across headquarters and seven branch locations in seven states, ensuring secure connectivity and operational continuity." data-pt="Gestão de infraestrutura corporativa na matriz e em sete filiais localizadas em sete estados, garantindo conectividade segura e continuidade operacional.">Managed enterprise infrastructure across headquarters and seven branch locations in seven states, ensuring secure connectivity and operational continuity.</li>
+                <li data-en="Managed high-availability SonicWall NGFW clusters across headquarters and branch offices, interconnected via site-to-site VPN." data-pt="Gestão de clusters SonicWall NGFW em alta disponibilidade na matriz e filiais, interconectados por VPN site-to-site.">Managed high-availability SonicWall NGFW clusters across headquarters and branch offices, interconnected via site-to-site VPN.</li>
+                <li data-en="Managed virtualization environments using VMware and XenServer, supporting production workloads." data-pt="Gestão de ambientes de virtualização VMware e XenServer, suportando workloads de produção.">Managed virtualization environments using VMware and XenServer, supporting production workloads.</li>
+                <li data-en="Administered MySQL databases, including maintenance and performance support." data-pt="Administração de bancos MySQL, incluindo manutenção e suporte de performance.">Administered MySQL databases, including maintenance and performance support.</li>
+                <li data-en="Implemented and managed Active Directory infrastructure across headquarters and branch offices." data-pt="Implementação e gestão de infraestrutura Active Directory na matriz e filiais.">Implemented and managed Active Directory infrastructure across headquarters and branch offices.</li>
+                <li data-en="Migrated email services from on-premises Zimbra to Microsoft 365." data-pt="Migração dos serviços de e-mail do Zimbra on-premises para Microsoft 365.">Migrated email services from on-premises Zimbra to Microsoft 365.</li>
+                <li data-en="Implemented mobile device management (MDM) using Citrix XenMobile." data-pt="Implementação de Mobile Device Management (MDM) usando Citrix XenMobile.">Implemented mobile device management (MDM) using Citrix XenMobile.</li>
+                <li data-en="Implemented infrastructure monitoring using Zabbix." data-pt="Implementação de monitoramento de infraestrutura usando Zabbix.">Implemented infrastructure monitoring using Zabbix.</li>
+                <li data-en="Supported TOTVS Protheus ERP and its Oracle Database 11g in a high-availability (HA) environment, covering Inventory, Billing, Human Resources/Payroll, and Procurement modules." data-pt="Suporte ao ERP TOTVS Protheus e ao Oracle Database 11g em ambiente de alta disponibilidade (HA), cobrindo os módulos de Estoque, Faturamento, Recursos Humanos/Folha de Pagamento e Compras.">Supported TOTVS Protheus ERP and its Oracle Database 11g in a high-availability (HA) environment, covering Inventory, Billing, Human Resources/Payroll, and Procurement modules.</li>
+                <li data-en="Assisted in the migration of the Human Resources and Payroll modules from TOTVS Protheus to Senior Sistemas ERP, supporting data migration, system integration, validation, and transition activities." data-pt="Apoio à migração dos módulos de Recursos Humanos e Folha de Pagamento do TOTVS Protheus para o ERP Senior Sistemas, incluindo migração de dados, integração de sistemas, validação e atividades de transição.">Assisted in the migration of the Human Resources and Payroll modules from TOTVS Protheus to Senior Sistemas ERP, supporting data migration, system integration, validation, and transition activities.</li>
+                <li data-en="Served as SAP Basis on the SAP implementation project to migrate the organization’s ERP environment from TOTVS Protheus to SAP, supporting SAP infrastructure, system administration, technical migration activities, and the SAP HANA database environment." data-pt="Atuação como SAP Basis no projeto de implementação SAP para migração do ambiente ERP da organização do TOTVS Protheus para SAP, apoiando infraestrutura SAP, administração de sistemas, atividades técnicas de migração e o ambiente de banco de dados SAP HANA.">Served as SAP Basis on the SAP implementation project to migrate the organization’s ERP environment from TOTVS Protheus to SAP, supporting SAP infrastructure, system administration, technical migration activities, and the SAP HANA database environment.</li>
+                <li data-en="Implemented enterprise backup solution using IBM Tivoli Storage Manager with tape library (LTO-5) and IBM Storwize for data tiering." data-pt="Implementação de solução corporativa de backup com IBM Tivoli Storage Manager, biblioteca de fitas LTO-5 e IBM Storwize para data tiering.">Implemented enterprise backup solution using IBM Tivoli Storage Manager with tape library (LTO-5) and IBM Storwize for data tiering.</li>
+                <li data-en="Managed preventive maintenance and operational readiness of critical power infrastructure, including UPS systems, battery banks, and diesel generators across headquarters and branch locations, ensuring service continuity during outages." data-pt="Gestão de manutenção preventiva e prontidão operacional da infraestrutura elétrica crítica, incluindo UPS, bancos de baterias e geradores a diesel na matriz e filiais, garantindo continuidade dos serviços durante indisponibilidades.">Managed preventive maintenance and operational readiness of critical power infrastructure, including UPS systems, battery banks, and diesel generators across headquarters and branch locations, ensuring service continuity during outages.</li>
+              </ul>
+            </details>
           </article>
 
           <article class="role">
             <div class="role-period">2010—2015<br><span class="role-location" data-en="Earlier career" data-pt="Início da carreira">Earlier career</span></div>
             <div class="role-main"><h3 data-en="Infrastructure, Consulting &amp; Field Operations" data-pt="Infraestrutura, Consultoria e Operações de Campo">Infrastructure, Consulting &amp; Field Operations</h3><p class="role-company">CDA Alimentos · Consulting · Midway Labs · Field Services</p></div>
             <p class="role-description" data-en="Built the hands-on foundation in enterprise infrastructure, virtualization, backup, Active Directory, networking, Linux, security, hardware, and business continuity across food, healthcare, legal, logistics, and financial environments." data-pt="Construiu a base prática em infraestrutura empresarial, virtualização, backup, Active Directory, redes, Linux, segurança, hardware e continuidade de negócios nos setores de alimentos, saúde, jurídico, logística e financeiro.">Built the hands-on foundation in enterprise infrastructure, virtualization, backup, Active Directory, networking, Linux, security, hardware, and business continuity across food, healthcare, legal, logistics, and financial environments.</p>
+
+            <details class="role-details">
+              <summary><span data-en="View role details" data-pt="Ver detalhes da experiência">View role details</span></summary>
+              <ul>
+                <li data-en="Built the hands-on foundation in enterprise infrastructure, virtualization, backup, Active Directory, networking, Linux, security, hardware, and business continuity across food, healthcare, legal, logistics, and financial environments." data-pt="Construiu a base prática em infraestrutura empresarial, virtualização, backup, Active Directory, redes, Linux, segurança, hardware e continuidade de negócios nos setores de alimentos, saúde, jurídico, logística e financeiro.">Built the hands-on foundation in enterprise infrastructure, virtualization, backup, Active Directory, networking, Linux, security, hardware, and business continuity across food, healthcare, legal, logistics, and financial environments.</li>
+              </ul>
+            </details>
           </article>
         </div>
       </div>
@@ -1246,7 +1464,7 @@
           <article class="capability"><span class="capability-number">03 / 06</span><h3 data-en="Automation &amp; delivery" data-pt="Automação e entrega">Automation &amp; delivery</h3><p>Ansible, AWX, Shell, Git, Jenkins, GitHub Actions, Rundeck, REST API integrations, CI/CD.</p></article>
           <article class="capability"><span class="capability-number">04 / 06</span><h3 data-en="Observability" data-pt="Observabilidade">Observability</h3><p>Zabbix, Prometheus, Grafana, OpenSearch, Graylog, Elastic Stack, ElastiFlow, TimescaleDB.</p></article>
           <article class="capability"><span class="capability-number">05 / 06</span><h3 data-en="Data platforms" data-pt="Plataformas de dados">Data platforms</h3><p>MySQL, PostgreSQL, TimescaleDB, Redis, Dragonfly, PgBouncer, replication, indexing, caching.</p></article>
-          <article class="capability"><span class="capability-number">06 / 06</span><h3 data-en="Networking &amp; security" data-pt="Redes e segurança">Networking &amp; security</h3><p>Cloudflare, Imperva, Nginx, FortiGate, pfSense, DNS, WAF, VPN, VLAN, LACP, routing, OWASP.</p></article>
+          <article class="capability"><span class="capability-number">06 / 06</span><h3 data-en="Networking &amp; security" data-pt="Redes e segurança">Networking &amp; security</h3><p>Cloudflare, Imperva, Nginx, FortiGate, pfSense, DNS, WAF, VPN, IPv4/IPv6, VLANs, QinQ, LACP, MTU, VXLAN, LLDP, sFLOW, netflow, routing, OWASP.</p></article>
         </div>
       </div>
     </section>
@@ -1262,7 +1480,7 @@
             <a class="button" href="https://wa.me/5511991213906" target="_blank" rel="noopener noreferrer"><span data-en="WhatsApp" data-pt="WhatsApp">WhatsApp</span> <span aria-hidden="true">↗</span></a>
             <a class="button" href="https://www.linkedin.com/in/hwildes" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
             <a class="button" href="https://github.com/whanada" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
-            <a class="button" href="https://drive.google.com/file/d/1bcWW8rTx83DM23Zsl9TMvRWMr3_Kir8P/view?usp=drive_link" data-resume-link target="_blank" rel="noopener noreferrer"><span data-en="View résumé" data-pt="Ver currículo">View résumé</span> <span aria-hidden="true">↗</span></a>
+            <a class="button" href="https://drive.google.com/file/d/1VYpC6d6ZHfY64PyYC3dYBVYS_9TbwE9Y/view?usp=sharing" data-resume-link target="_blank" rel="noopener noreferrer"><span data-en="View résumé" data-pt="Ver currículo">View résumé</span> <span aria-hidden="true">↗</span></a>
           </div>
         </div>
       </div>
@@ -1301,8 +1519,8 @@
         pt: 'Wildes Hanada é engenheiro sênior de infraestrutura cloud e plataforma, especializado em sistemas distribuídos, Proxmox, Ceph, Kubernetes, automação e observabilidade.'
       };
       const resumeUrls = {
-        en: 'https://drive.google.com/file/d/1bcWW8rTx83DM23Zsl9TMvRWMr3_Kir8P/view?usp=drive_link',
-        pt: 'https://drive.google.com/file/d/1Ql5SFKcYTMZ-0UHL9UulG__sew34pJUH/view?usp=sharing'
+        en: 'https://drive.google.com/file/d/1VYpC6d6ZHfY64PyYC3dYBVYS_9TbwE9Y/view?usp=sharing',
+        pt: 'https://drive.google.com/file/d/1OZ0u7chddfZ1Imt1KSPvzSdu2fw8chBK/view?usp=sharing'
       };
       const themeLabels = {
         en: { light: 'Use light theme', dark: 'Use dark theme' },
