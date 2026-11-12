@@ -1646,11 +1646,15 @@
         systemTheme.addListener(handleSystemThemeChange);
       }
 
-      let preferredLanguage = 'en';
+      const browserLanguage = (navigator.languages && navigator.languages[0]) || navigator.language || 'en';
+      let preferredLanguage = /^pt(?:-|$)/i.test(browserLanguage) ? 'pt' : 'en';
       try {
-        preferredLanguage = localStorage.getItem('preferred-language') || 'en';
+        const savedLanguage = localStorage.getItem('preferred-language');
+        if (savedLanguage === 'en' || savedLanguage === 'pt') {
+          preferredLanguage = savedLanguage;
+        }
       } catch (_) {
-        preferredLanguage = 'en';
+        // Keep the browser language when local storage is unavailable.
       }
       setLanguage(preferredLanguage);
       setTheme(root.dataset.theme);
