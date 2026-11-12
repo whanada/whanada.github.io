@@ -583,13 +583,13 @@
 
     .metric-grid {
       display: grid;
-      grid-template-columns: repeat(12, minmax(0, 1fr));
+      grid-template-columns: repeat(4, minmax(0, 1fr));
       border-top: 1px solid var(--line);
       border-left: 1px solid var(--line);
     }
 
     .metric {
-      grid-column: span 3;
+      min-width: 0;
       min-height: 10rem;
       padding: 1.8rem 1.6rem;
       display: flex;
@@ -597,10 +597,6 @@
       justify-content: center;
       border-right: 1px solid var(--line);
       border-bottom: 1px solid var(--line);
-    }
-
-    .metric:nth-child(n + 5) {
-      grid-column: span 4;
     }
 
     .metric-value {
@@ -972,15 +968,6 @@
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
-      .metric,
-      .metric:nth-child(n + 5) {
-        grid-column: span 1;
-      }
-
-      .metric:last-child {
-        grid-column: 1 / -1;
-      }
-
       .case-grid,
       .role-details {
       grid-column: 1 / -1;
@@ -1240,19 +1227,7 @@
         <div class="metric">
           <span class="metric-value">50+</span>
           <span class="metric-label" data-en="data centers across 20 countries" data-pt="data centers em 20 países">data centers across 20 countries</span>
-          <div class="metric">
-          <span class="metric-value">3,000</span>
-          <span class="metric-label" data-en="distributed customer VPSs" data-pt="VPSs de clientes distribuídas">distributed customer VPSs</span>
         </div>
-        <div class="metric">
-          <span class="metric-value">70+ PB</span>
-          <span class="metric-label" data-en="of storage maintained" data-pt="de armazenamento mantido">of storage maintained</span>
-        </div>
-        <div class="metric">
-          <span class="metric-value">2,000+</span>
-          <span class="metric-label" data-en="physical servers managed" data-pt="servidores físicos administrados">physical servers managed</span>
-        </div>
-      </div>
         <div class="metric">
           <span class="metric-value">1,000+</span>
           <span class="metric-label" data-en="horizontally scaled containers" data-pt="containers escalados horizontalmente">horizontally scaled containers</span>
@@ -1264,6 +1239,22 @@
         <div class="metric">
           <span class="metric-value">1M+</span>
           <span class="metric-label" data-en="API requests per minute supported" data-pt="requisições de API por minuto suportadas">API requests per minute supported</span>
+        </div>
+        <div class="metric">
+          <span class="metric-value">3,000</span>
+          <span class="metric-label" data-en="distributed customer VPSs" data-pt="VPSs de clientes distribuídas">distributed customer VPSs</span>
+        </div>
+        <div class="metric">
+          <span class="metric-value">70+ PB</span>
+          <span class="metric-label" data-en="of storage maintained" data-pt="de armazenamento mantido">of storage maintained</span>
+        </div>
+        <div class="metric">
+          <span class="metric-value">2,000+</span>
+          <span class="metric-label" data-en="physical servers managed" data-pt="servidores físicos administrados">physical servers managed</span>
+        </div>
+        <div class="metric">
+          <span class="metric-value">30+</span>
+          <span class="metric-label" data-en="Proxmox clusters across 27 data centers in 13 countries" data-pt="clusters Proxmox distribuídos em 27 data centers em 13 países">Proxmox clusters across 27 data centers in 13 countries</span>
         </div>
       </div>
     </section>
